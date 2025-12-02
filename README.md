@@ -9,15 +9,16 @@ Visit the site at: [https://travismccormick.github.io](https://travismccormick.g
 ## ✨ Features
 
 - **Multi-page design** with smooth navigation
-- **Dark/Light mode toggle** with persistent theme preference (press 'T' key)
-- **Keyboard shortcuts** for power users (H/1=Home, P/2=Projects, R/3=Resume, C/4=Contact)
+- **Dark/Light mode toggle** with persistent theme preference (press 'T' key) - defaults to dark
+- **Keyboard shortcuts** for power users (H/1=Home, A/2=About, P/3=Projects, R/4=Resume, S/5=Swimming, C/6=Contact)
 - **Responsive design** that works on all devices
-- **Professional royal blue color scheme** with subtle circuit board background
-- **Visual timeline** showcasing your journey from lifeguard to embedded security engineer
-- **Four main sections:**
-  - Home with headshot and timeline
-  - Projects showcase
+- **Clean, modern design** with professional royal blue color scheme
+- **Six main sections:**
+  - Home with clean section cards for easy navigation
+  - About page with table of contents, full story, education, certifications, experience, and interests
+  - Projects showcase with featured project stories
   - Interactive resume with color & B&W PDF downloads
+  - Swimming page showcasing competitive background and achievements
   - Easy-access contact page
 
 ## 🎨 Customization
@@ -101,9 +102,11 @@ See `assets/README.md` for detailed guidelines.
 
 Power users can navigate using keyboard shortcuts:
 - **H** or **1** - Home page
-- **P** or **2** - Projects page
-- **R** or **3** - Resume page
-- **C** or **4** - Contact page
+- **A** or **2** - About page
+- **P** or **3** - Projects page
+- **R** or **4** - Resume page
+- **S** or **5** - Swimming page
+- **C** or **6** - Contact page
 - **T** - Toggle dark/light theme
 - **G** - Scroll to top
 - **B** - Scroll to bottom
