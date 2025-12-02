@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Travis McCormick</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html">Travis McCormick</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="resume.html" class="active">Resume</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Resume</h1>
+                <div class="resume-actions">
+                    <a href="resume.pdf" download class="btn btn-primary">
+                        <i class="fas fa-download"></i> Download PDF
+                    </a>
+                    <button onclick="window.print()" class="btn btn-secondary">
+                        <i class="fas fa-print"></i> Print
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="resume">
+            <div class="container resume-container">
+                <div class="resume-header-section">
+                    <h2 class="resume-name">Travis S. McCormick</h2>
+                    <div class="resume-contact-info">
+                        <span><i class="fas fa-map-marker-alt"></i> Lakeland, FL</span>
+                        <span><i class="fas fa-envelope"></i> mccormicktravis1110@gmail.com</span>
+                        <span><i class="fas fa-phone"></i> 407-433-4441</span>
+                        <span><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/travissmccormick" target="_blank">linkedin.com/in/travissmccormick</a></span>
+                    </div>
+                </div>
+
+                <!-- Experience -->
+                <div class="resume-section">
+                    <h3 class="resume-section-title">Experience</h3>
+                    
+                    <div class="resume-item">
+                        <div class="resume-item-header">
+                            <div>
+                                <h4>Embedded Cybersecurity Engineer</h4>
+                                <p class="company">EveryPeer | Winter Haven, FL</p>
+                            </div>
+                            <span class="date">May 2025 – Present</span>
+                        </div>
+                        <ul>
+                            <li>Built an embedded agent to control WireGuard, automate config changes, and report real-time interface status.</li>
+                            <li>Added network-metrics collection for IP-latency measurement and high-usage endpoint identification.</li>
+                            <li>Contributed backend integrations for the customer web portal displaying embedded-device metrics.</li>
+                            <li>Expanded the embedded controller to manage the Wi-Fi card, bridge interface, and local device modes.</li>
+                            <li>Developed a WebRTC-based peer-discovery system that bootstraps automated WireGuard P2P tunnels.</li>
+                        </ul>
+                    </div>
+
+                    <div class="resume-item">
+                        <div class="resume-item-header">
+                            <div>
+                                <h4>Reverse Engineering Intern</h4>
+                                <p class="company">ICR, Inc. | Orlando, FL</p>
+                            </div>
+                            <span class="date">May 2024 – August 2024</span>
+                        </div>
+                        <ul>
+                            <li>Deciphered firmware, assigning accurate symbols to functions, improving code readability and debugging.</li>
+                            <li>Engineered a testing framework to validate assigned symbols and ensure system integrity.</li>
+                            <li>Enhanced a remote PDU control program, increasing efficiency and reliability.</li>
+                            <li>Created client-specific test procedures, streamlining testing and improving client satisfaction.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Projects -->
+                <div class="resume-section">
+                    <h3 class="resume-section-title">Projects</h3>
+                    
+                    <div class="resume-item">
+                        <div class="resume-item-header">
+                            <div>
+                                <h4>Lifeguard App Development</h4>
+                                <p class="company">City Of Lakeland | Lakeland, FL</p>
+                            </div>
+                            <span class="date">January 2024 – May 2025</span>
+                        </div>
+                        <ul>
+                            <li>Developed a React web app for Lakeland to optimize lifeguard scheduling.</li>
+                            <li>Collaborated with the superintendent to define requirements and improve scheduling efficiency.</li>
+                        </ul>
+                    </div>
+
+                    <div class="resume-item">
+                        <div class="resume-item-header">
+                            <div>
+                                <h4>Breadboard 4-Bit Arithmetic Logic Unit</h4>
+                                <p class="company">Florida Polytechnic University</p>
+                            </div>
+                            <span class="date">October 2024 – December 2024</span>
+                        </div>
+                        <ul>
+                            <li>Constructed a 4-bit Arithmetic Logic Unit (ALU) on a breadboard using discrete IC chips.</li>
+                            <li>Integrated core ALU functions, including addition, OR, AND, XOR, NAND, and comparative logic operations.</li>
+                            <li>Validated ALU functionality through comprehensive testing of various input combinations.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Certifications & Accomplishments -->
+                <div class="resume-section">
+                    <h3 class="resume-section-title">Certifications & Accomplishments</h3>
+                    <div class="resume-item">
+                        <ul class="accomplishments-list">
+                            <li><strong>Certified in Cybersecurity</strong> | ISC2 <span class="date-inline">(November 2025 - November 2028)</span></li>
+                            <li><strong>Southeast CCDC Regional Qualifier</strong> | Florida Polytechnic Cybersecurity Club <span class="date-inline">(February 2025)</span></li>
+                            <li><strong>B-Sides Orlando In-Person CTF Champion</strong> | Florida Polytechnic Cybersecurity Club <span class="date-inline">(October 2024)</span></li>
+                            <li><strong>Industrial Control Systems Cybersecurity Training (ICSC)</strong> | SEL Engineering Services <span class="date-inline">(April 2023)</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="resume-section">
+                    <h3 class="resume-section-title">Education</h3>
+                    <div class="resume-item">
+                        <div class="resume-item-header">
+                            <div>
+                                <h4>Bachelor of Science in Cybersecurity Engineering</h4>
+                                <p class="company">Florida Polytechnic University | Lakeland, FL</p>
+                                <p class="gpa">GPA: 3.25</p>
+                            </div>
+                            <span class="date">May 2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Relevant Coursework -->
+                <div class="resume-section">
+                    <h3 class="resume-section-title">Relevant Coursework</h3>
+                    <div class="resume-item">
+                        <div class="coursework-category">
+                            <h5>Cybersecurity:</h5>
+                            <p>Network Security, Applied Cryptography, Secure Software Engineering, Protective & Forensic Tech For Cybersecurity, Hardware Security, Cyber-Physical Security, Embedded OS, Ethical Hacking, Cyber Design Lab</p>
+                        </div>
+                        <div class="coursework-category">
+                            <h5>CS/CE/EE:</h5>
+                            <p>Data Structures & Algorithms, Object-Oriented Programming, Computer Architecture & Organization, Digital Logic Design, Digital Electronics, Electronic Devices, Intro to Unix, Circuits, Discrete Math, Linear Algebra</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills -->
+                <div class="resume-section">
+                    <h3 class="resume-section-title">Skills</h3>
+                    <div class="resume-item">
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <h5>Programming Languages</h5>
+                                <p>Go, C, C++, Bash, Python, JavaScript, MIPS, Matlab, Verilog, FreeRTOS</p>
+                            </div>
+                            <div class="skill-category">
+                                <h5>Software and Tools</h5>
+                                <p>IDA Pro, Ghidra, SolidWorks, LTSpice, Wireshark, Microsoft Office</p>
+                            </div>
+                            <div class="skill-category">
+                                <h5>Security</h5>
+                                <p>Windows & Linux Hardening, Nmap, Networking</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Leadership -->
+                <div class="resume-section">
+                    <h3 class="resume-section-title">Leadership</h3>
+                    
+                    <div class="resume-item">
+                        <div class="resume-item-header">
+                            <div>
+                                <h4>Cybersecurity Club Chief of Staff</h4>
+                                <p class="company">Florida Polytechnic University</p>
+                            </div>
+                            <span class="date">October 2024 – May 2025</span>
+                        </div>
+                        <ul>
+                            <li>Planned and organized weekly meetings, ensuring smooth execution and clear agendas.</li>
+                            <li>Designed presentation slides for meetings, tailoring content to the club's needs.</li>
+                            <li>Communicated with leadership to track task progress and provide updates on deadlines.</li>
+                            <li>Fostered a sense of community by promoting inclusiveness and collaboration within the club.</li>
+                        </ul>
+                    </div>
+
+                    <div class="resume-item">
+                        <div class="resume-item-header">
+                            <div>
+                                <h4>Head Lifeguard</h4>
+                                <p class="company">Florida Polytechnic University</p>
+                            </div>
+                            <span class="date">August 2022 – May 2025</span>
+                        </div>
+                        <ul>
+                            <li>Applied 6+ years of first responder skills to ensure safety and rapid emergency response.</li>
+                            <li>Mentored and certified new lifeguards, fostering a competent and reliable team.</li>
+                            <li>Implemented risk management and loss prevention strategies, enhancing safety protocols.</li>
+                            <li>Coordinated daily operations and schedules, ensuring optimal coverage and efficiency.</li>
+                            <li>Conducted training sessions to maintain high preparedness and compliance with safety standards.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Travis McCormick. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
