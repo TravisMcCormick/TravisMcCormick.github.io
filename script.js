@@ -125,3 +125,52 @@ function setActiveNavLink() {
 
 setActiveNavLink();
 
+// ==================== KEYBOARD SHORTCUTS ====================
+document.addEventListener('keydown', (e) => {
+    // Don't trigger shortcuts if user is typing in an input or textarea
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
+        return;
+    }
+
+    const key = e.key.toLowerCase();
+
+    // Navigation shortcuts
+    const shortcuts = {
+        'h': 'index.html',
+        '1': 'index.html',
+        'p': 'projects.html',
+        '2': 'projects.html',
+        'r': 'resume.html',
+        '3': 'resume.html',
+        'c': 'contact.html',
+        '4': 'contact.html'
+    };
+
+    if (shortcuts[key]) {
+        window.location.href = shortcuts[key];
+        return;
+    }
+
+    // Theme toggle with 't' key
+    if (key === 't') {
+        e.preventDefault();
+        themeToggle.click();
+        return;
+    }
+
+    // Go to top with 'g' key
+    if (key === 'g') {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+    }
+
+    // Go to bottom with 'b' key
+    if (key === 'b') {
+        e.preventDefault();
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        return;
+    }
+});
+
+
