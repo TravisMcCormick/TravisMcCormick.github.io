@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Travis McCormick</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="nav-brand">
+                <a href="index.html">TSM</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="swimming.html">Swimming</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>About Me</h1>
+            </div>
+        </section>
+
+        <section class="about-page">
+            <div class="container">
+                <div class="table-of-contents">
+                    <h3>Table of Contents</h3>
+                    <ul>
+                        <li><a href="#my-story">My Story</a></li>
+                        <li><a href="#education">Education</a></li>
+                        <li><a href="#certifications">Certifications</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#interests">Interests</a></li>
+                    </ul>
+                </div>
+
+                <div class="about-page-content">
+                    <section id="my-story">
+                        <h2>My Story</h2>
+                        <p>
+                            I like to think of myself as a jack of all trades. I can code, I can build things, and I love figuring out how to make things work better. 
+                            My background isn't your typical path into cybersecurity—I started as a competitive swimmer in high school, got my lifeguard 
+                            certification at 16, and spent years teaching kids and adults how to swim as a Water Safety Instructor.
+                        </p>
+                        <p>
+                            I worked my way up to Head Lifeguard at Florida Poly, and during my time at the City of Lakeland, I noticed they were still 
+                            managing lifeguard rotations with a dry erase board. It seemed like an obvious problem to solve, so I built a React web app 
+                            to replace it. Unfortunately, when I graduated and left, the IT department didn't want to maintain it, so it never got fully 
+                            implemented. But it taught me a lot about building real solutions for real problems.
+                        </p>
+                        <p>
+                            A while back, I started getting early signs of carpal tunnel from all the typing and coding. Instead of just dealing with it, 
+                            I decided to build a custom ergonomic keyboard. I taught myself how to solder, built a Corne split keyboard from scratch, 
+                            learned about ZMK firmware, and even got into 3D printing to make the case. It's one of my favorite projects because it 
+                            solved a real problem I was having.
+                        </p>
+                        <p>
+                            Right now, I'm working as an Embedded Cybersecurity Engineer at EveryPeer. I build embedded agents, work on WebRTC-based 
+                            peer discovery systems, and contribute to backend stuff for network security. I'm ISC2 Certified in Cybersecurity and 
+                            currently studying for my Network+ certification.
+                        </p>
+                        <p>
+                            I also maintain a Zettelkasten—basically a knowledge management system where I keep all my notes organized. It's easier to 
+                            write one small note than trying to write everything about a subject all at once. Plus, it lets me link stuff together. 
+                            Like, algebra is used in physics and calculus, but if you don't have a note on algebra, you'd have to write that information 
+                            in both the physics and calculus sections. With Zettelkasten, I just link them. It's way more efficient.
+                        </p>
+                    </section>
+
+                    <section id="education">
+                        <h2>Education</h2>
+                        <div class="about-education-grid">
+                            <div class="about-education-item">
+                                <h3><i class="fas fa-graduation-cap"></i> Bachelor of Science in Cybersecurity Engineering</h3>
+                                <p class="institution">Florida Polytechnic University, Lakeland, FL</p>
+                                <p class="date">Graduated May 2025 | GPA: 3.25</p>
+                                <p class="focus">Focus: Embedded Systems, Network Security, Hardware Security</p>
+                            </div>
+
+                            <div class="about-education-item">
+                                <h3><i class="fas fa-school"></i> High School Diploma</h3>
+                                <p class="institution">St. Cloud High School, St. Cloud, FL</p>
+                                <p class="date">Graduated May 2021 | GPA: 3.7 (Unweighted), 4.3 (Weighted)</p>
+                                <p class="focus">Competitive Swimmer | Varsity Team 2014-2018</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="certifications">
+                        <h2>Certifications</h2>
+                        <div class="about-cert-list">
+                            <div class="about-cert-item">
+                                <h3><i class="fas fa-certificate"></i> Certified in Cybersecurity (CC)</h3>
+                                <p class="cert-org">ISC2</p>
+                                <p class="cert-date">November 2025 - November 2028</p>
+                                <p class="cert-desc">Covers security principles, access controls, network security, and security operations. It's a good entry-level cert that covers the fundamentals.</p>
+                            </div>
+
+                            <div class="about-cert-item studying">
+                                <h3><i class="fas fa-book-open"></i> CompTIA Network+ <span class="studying-badge">In Progress</span></h3>
+                                <p class="cert-org">CompTIA</p>
+                                <p class="cert-date">Currently Studying</p>
+                                <p class="cert-desc">Working on getting this one next. It covers networking concepts, infrastructure, network operations, and troubleshooting—all stuff I use at work anyway, so it makes sense to get certified.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="experience">
+                        <h2>Experience</h2>
+                        <div class="about-experience-list">
+                            <div class="about-exp-item current">
+                                <h3>Embedded Cybersecurity Engineer</h3>
+                                <p class="exp-company">EveryPeer | Winter Haven, FL</p>
+                                <p class="exp-date">May 2025 – Present</p>
+                            </div>
+
+                            <div class="about-exp-item">
+                                <h3>Reverse Engineering Intern</h3>
+                                <p class="exp-company">ICR, Inc. | Orlando, FL</p>
+                                <p class="exp-date">May 2024 – August 2024</p>
+                            </div>
+
+                            <div class="about-exp-item">
+                                <h3>Chief of Staff</h3>
+                                <p class="exp-company">Florida Polytechnic Cybersecurity Club</p>
+                                <p class="exp-date">October 2024 – May 2025</p>
+                            </div>
+
+                            <div class="about-exp-item">
+                                <h3>Head Lifeguard</h3>
+                                <p class="exp-company">Florida Polytechnic University</p>
+                                <p class="exp-date">August 2022 – May 2025</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="interests">
+                        <h2>Interests</h2>
+                        <div class="interests-grid">
+                            <div class="interest-item">
+                                <span class="interest-emoji">🏊</span>
+                                <h3>Swimming</h3>
+                                <p>Competitive swimmer from 2014-2018. Still swim regularly for fitness and relaxation. It's where I learned discipline and how to push myself.</p>
+                            </div>
+
+                            <div class="interest-item">
+                                <span class="interest-emoji">🖨️</span>
+                                <h3>3D Printing</h3>
+                                <p>Got into it when I needed to print a case for my custom keyboard. Now I use it for all kinds of projects and prototyping.</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Travis McCormick. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
