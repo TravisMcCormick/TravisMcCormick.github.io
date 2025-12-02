@@ -9,40 +9,39 @@ Visit the site at: [https://travismccormick.github.io](https://travismccormick.g
 ## ✨ Features
 
 - **Multi-page design** with smooth navigation
-- **Dark/Light mode toggle** with persistent theme preference
+- **Dark/Light mode toggle** with persistent theme preference (press 'T' key)
+- **Keyboard shortcuts** for power users (H/1=Home, P/2=Projects, R/3=Resume, C/4=Contact)
 - **Responsive design** that works on all devices
-- **Professional blue color scheme**
+- **Professional royal blue color scheme** with subtle circuit board background
+- **Visual timeline** showcasing your journey from lifeguard to embedded security engineer
 - **Four main sections:**
-  - Home/About
+  - Home with headshot and timeline
   - Projects showcase
-  - Interactive resume with PDF download
+  - Interactive resume with color & B&W PDF downloads
   - Easy-access contact page
 
 ## 🎨 Customization
 
-### Add Your Personal Bio
+### Add Your Headshot Photo
 
-Edit the "About Me" section in `index.html` (around line 49-56) to add your personalized content.
+1. Add your professional headshot to the `assets/` folder
+2. Name it `headshot.jpg` or `headshot.png`
+3. Recommended size: 400x400px to 600x600px (square)
+4. See `assets/README.md` for more details
 
-### Add Resume PDF
+### Add Your Personal Bio (Optional)
 
-1. Create or export your resume as a PDF
-2. Name it `resume.pdf`
-3. Place it in the root directory of this repository
-4. The download button on the resume page will automatically link to it
+Edit the "About Me" section in `index.html` to add personalized content beyond the timeline.
 
-### Contact Form Setup
+### Add Project Photos (Optional)
 
-The contact form uses Formspree for easy form handling:
+You can add photos of your projects to the `assets/` folder:
+- `keyboard-corne.jpg` - Your custom Corne keyboard
+- `keyboard-case.jpg` - 3D printed keyboard case
+- `alu-breadboard.jpg` - Breadboard ALU project
+- Any other project screenshots
 
-1. Sign up at [Formspree](https://formspree.io)
-2. Create a new form and get your form ID
-3. In `contact.html`, replace `YOUR_FORM_ID` on line 68 with your actual Formspree form ID:
-   ```html
-   <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-   ```
-
-Alternatively, you can remove the form and keep just the contact information.
+See `assets/README.md` for detailed guidelines.
 
 ## 🚀 Deployment to GitHub Pages
 
@@ -92,11 +91,22 @@ Alternatively, you can remove the form and keep just the contact information.
 
 ## 📝 To-Do
 
-- [ ] Add personalized bio in the About Me section
-- [ ] Add resume.pdf file to root directory
-- [ ] Set up Formspree for contact form (optional)
-- [ ] Add professional headshot/photo (optional)
-- [ ] Customize colors if desired (edit CSS variables in styles.css)
+- [x] Add resume PDFs (color and B&W versions)
+- [ ] Add professional headshot to `assets/headshot.jpg`
+- [ ] Add personalized bio in the About Me section (optional)
+- [ ] Add project photos to assets folder (optional)
+- [ ] Review timeline for accuracy and add any missing milestones
+
+## ⌨️ Keyboard Shortcuts
+
+Power users can navigate using keyboard shortcuts:
+- **H** or **1** - Home page
+- **P** or **2** - Projects page
+- **R** or **3** - Resume page
+- **C** or **4** - Contact page
+- **T** - Toggle dark/light theme
+- **G** - Scroll to top
+- **B** - Scroll to bottom
 
 ## 📄 License
 
