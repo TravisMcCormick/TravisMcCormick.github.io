@@ -19,7 +19,7 @@ Visit the site at: [https://travismccormick.github.io](https://travismccormick.g
   - Projects showcase with featured project stories
   - Interactive resume with color & B&W PDF downloads
   - Swimming page showcasing competitive background and achievements
-  - Easy-access contact page
+  - Contact page with all contact info and social links
 
 ## 🎨 Customization
 
@@ -80,14 +80,16 @@ See `assets/README.md` for detailed guidelines.
 
 ```
 .
-├── index.html          # Home page with hero and about section
-├── projects.html       # Projects showcase
-├── resume.html         # Interactive resume
-├── contact.html        # Contact information and form
-├── styles.css          # All styling with light/dark themes
-├── script.js           # Interactive features
-├── resume.pdf          # Your resume PDF (to be added)
-└── README.md           # This file
+├── index.html              # Home page with hero and about section
+├── about.html              # Full about page with story, education, etc.
+├── projects.html           # Projects showcase
+├── resume.html             # Interactive resume
+├── swimming.html           # Swimming achievements and times
+├── contact.html            # Contact information and social links
+├── styles.css              # All styling with light/dark themes
+├── script.js               # Interactive features
+├── assets/                 # Images and PDFs
+└── README.md               # This file
 ```
 
 ## 📝 To-Do
