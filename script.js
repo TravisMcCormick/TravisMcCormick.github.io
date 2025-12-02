@@ -138,12 +138,16 @@ document.addEventListener('keydown', (e) => {
     const shortcuts = {
         'h': 'index.html',
         '1': 'index.html',
+        'a': 'about.html',
+        '2': 'about.html',
         'p': 'projects.html',
-        '2': 'projects.html',
+        '3': 'projects.html',
         'r': 'resume.html',
-        '3': 'resume.html',
+        '4': 'resume.html',
+        's': 'swimming.html',
+        '5': 'swimming.html',
         'c': 'contact.html',
-        '4': 'contact.html'
+        '6': 'contact.html'
     };
 
     if (shortcuts[key]) {
