@@ -44,13 +44,12 @@ This folder contains all images, photos, and media files for your portfolio webs
 
 ## 📄 Resume PDFs
 
-### Required Resume Files
-Place these in the **root directory** (not in assets folder):
+### Resume Files (Already Added! ✅)
 
-1. **`resume-color.pdf`** - Your full-color resume
-2. **`resume-bw.pdf`** - Your black & white resume
+1. **`Travis_McCormick_Resume(clr).pdf`** - Your full-color resume
+2. **`Travis_McCormick_Resume(blk).pdf`** - Your black & white resume
 
-Both files should be in the root folder alongside index.html
+Both files are in the assets folder and linked from the resume page.
 
 ## 🎨 Image Guidelines
 
