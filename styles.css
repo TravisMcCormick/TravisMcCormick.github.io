@@ -76,9 +76,16 @@ a:hover {
 
 /* ==================== CONTAINER ==================== */
 .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 40px;
+}
+
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1600px;
+        padding: 0 60px;
+    }
 }
 
 /* ==================== NAVIGATION ==================== */
@@ -94,13 +101,18 @@ a:hover {
 
 .navbar .nav-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-    padding: 1rem 20px;
+    padding: 1rem 40px;
+    gap: 3rem;
 }
 
 .nav-brand {
-    margin-right: auto;
+    flex-shrink: 0;
+}
+
+.nav-menu {
+    margin-left: 0;
 }
 
 .nav-brand a {
@@ -189,7 +201,7 @@ a:hover {
     display: flex;
     align-items: center;
     gap: 4rem;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -335,8 +347,6 @@ section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 2rem;
-    max-width: 1100px;
-    margin: 0 auto;
 }
 
 .education-card {
@@ -412,7 +422,7 @@ section {
 }
 
 .certifications-content {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -506,7 +516,7 @@ section {
 }
 
 .timeline {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     position: relative;
     padding: 2rem 0;
@@ -616,8 +626,6 @@ section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
-    max-width: 1000px;
-    margin: 0 auto;
 }
 
 .section-card {
@@ -895,7 +903,7 @@ section {
 }
 
 .resume-container {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -1021,7 +1029,7 @@ section {
 
 /* ==================== CONTACT ==================== */
 .contact-info-centered {
-    max-width: 700px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -1110,7 +1118,7 @@ section {
 }
 
 .story-content {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -1144,7 +1152,7 @@ section {
     color: var(--text-secondary);
     font-size: 1rem;
     font-style: italic;
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto 2.5rem;
     padding: 1rem 1.5rem;
     background: var(--bg-color);
@@ -1158,7 +1166,7 @@ section {
 }
 
 .times-table-container {
-    max-width: 1000px;
+    max-width: 1400px;
     margin: 0 auto;
     overflow-x: auto;
     background: var(--card-bg);
@@ -1243,7 +1251,7 @@ section {
 }
 
 .journey-content {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -1271,7 +1279,7 @@ section {
 }
 
 .about-page .container {
-    max-width: 1000px;
+    max-width: 1400px;
 }
 
 .table-of-contents {
@@ -1590,6 +1598,11 @@ footer {
         display: flex;
     }
 
+    .navbar .nav-container {
+        padding: 1rem 20px;
+        gap: 1rem;
+    }
+
     .nav-menu {
         position: fixed;
         left: -100%;
@@ -1606,6 +1619,10 @@ footer {
 
     .nav-menu.active {
         left: 0;
+    }
+
+    .container {
+        padding: 0 20px;
     }
 
     .hero-content {
