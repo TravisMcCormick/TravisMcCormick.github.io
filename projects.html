@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Travis McCormick</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html">Travis McCormick</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>My Projects</h1>
+                <p>A collection of my work in cybersecurity, embedded systems, and software development</p>
+            </div>
+        </section>
+
+        <section class="projects">
+            <div class="container">
+                <div class="projects-grid">
+                    <!-- Zettelkasten -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <i class="fas fa-brain project-icon"></i>
+                            <div class="project-tags">
+                                <span class="tag">Knowledge Management</span>
+                            </div>
+                        </div>
+                        <h3>Zettelkasten</h3>
+                        <p>A collection of my personal Zettelkasten notes, organized for efficient knowledge management and exploration. Covers topics including networking, security, firewall configurations, and lockpicking.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Learning</span>
+                            <span class="tech-badge">Networking</span>
+                            <span class="tech-badge">Security</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/TravisMcCormick/ZettleKasten" target="_blank" class="btn btn-small">
+                                <i class="fab fa-github"></i> View Repository
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Lifeguard React App -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <i class="fas fa-calendar-alt project-icon"></i>
+                            <div class="project-tags">
+                                <span class="tag">Professional</span>
+                                <span class="tag">Web Development</span>
+                            </div>
+                        </div>
+                        <h3>Lifeguard Scheduling App (React)</h3>
+                        <p>Developed a React web application for the City of Lakeland to optimize lifeguard scheduling. Collaborated directly with the superintendent to define requirements and improve operational efficiency.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">React</span>
+                            <span class="tech-badge">JavaScript</span>
+                            <span class="tech-badge">Web App</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/TravisMcCormick/lakeland-lifeguard-react-app" target="_blank" class="btn btn-small">
+                                <i class="fab fa-github"></i> View Repository
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Lifeguard App C++ -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <i class="fas fa-swimmer project-icon"></i>
+                            <div class="project-tags">
+                                <span class="tag">C++</span>
+                            </div>
+                        </div>
+                        <h3>Lifeguard Rotation Scheduler</h3>
+                        <p>A user-friendly and efficient desktop tool designed to streamline lifeguard rotation scheduling. Features real-time information updates, dynamic stand management, threading for performance, and weather pause functionality.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">C++</span>
+                            <span class="tech-badge">Threading</span>
+                            <span class="tech-badge">Real-time</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/TravisMcCormick/Lifeguard-App" target="_blank" class="btn btn-small">
+                                <i class="fab fa-github"></i> View Repository
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- ALU Project -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <i class="fas fa-microchip project-icon"></i>
+                            <div class="project-tags">
+                                <span class="tag">Hardware</span>
+                            </div>
+                        </div>
+                        <h3>4-Bit Arithmetic Logic Unit (ALU)</h3>
+                        <p>Constructed a 4-bit ALU on a breadboard using discrete IC chips. Integrated core functions including addition, OR, AND, XOR, NAND, and comparative logic operations with comprehensive validation testing.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Digital Logic</span>
+                            <span class="tech-badge">Hardware</span>
+                            <span class="tech-badge">IC Chips</span>
+                        </div>
+                    </div>
+
+                    <!-- Stopwatch Verilog -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <i class="fas fa-stopwatch project-icon"></i>
+                            <div class="project-tags">
+                                <span class="tag">Verilog</span>
+                            </div>
+                        </div>
+                        <h3>Digital Stopwatch</h3>
+                        <p>Created a stopwatch using Verilog as part of Digital Logic Design coursework. Utilized D flip-flops, clock dividers, and state machines to implement precise timing functionality.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Verilog</span>
+                            <span class="tech-badge">FPGA</span>
+                            <span class="tech-badge">Digital Design</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/TravisMcCormick/StopWatch" target="_blank" class="btn btn-small">
+                                <i class="fab fa-github"></i> View Repository
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- DSA Final -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <i class="fas fa-chart-line project-icon"></i>
+                            <div class="project-tags">
+                                <span class="tag">Algorithms</span>
+                            </div>
+                        </div>
+                        <h3>Data Optimization Algorithm</h3>
+                        <p>Developed an optimization algorithm to maximize data value within budget constraints. Given 100 subjects selling data, the solution identifies the most valuable subjects within a $10 budget using advanced algorithms.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">C++</span>
+                            <span class="tech-badge">Algorithms</span>
+                            <span class="tech-badge">Optimization</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/TravisMcCormick/Data-Structures-and-Algorithms-Final" target="_blank" class="btn btn-small">
+                                <i class="fab fa-github"></i> View Repository
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- ZMK Config -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <i class="fas fa-keyboard project-icon"></i>
+                            <div class="project-tags">
+                                <span class="tag">Personal</span>
+                            </div>
+                        </div>
+                        <h3>ZMK Keyboard Configuration</h3>
+                        <p>Custom keyboard firmware configuration for mechanical keyboards using ZMK. Personalized layouts and key mappings for enhanced productivity.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">ZMK</span>
+                            <span class="tech-badge">Firmware</span>
+                            <span class="tech-badge">Configuration</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/TravisMcCormick/zmk-config" target="_blank" class="btn btn-small">
+                                <i class="fab fa-github"></i> View Repository
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="github-cta">
+                    <h3>Want to see more?</h3>
+                    <p>Check out my GitHub profile for additional projects and contributions</p>
+                    <a href="https://github.com/TravisMcCormick" target="_blank" class="btn btn-primary">
+                        <i class="fab fa-github"></i> Visit GitHub Profile
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Travis McCormick. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
