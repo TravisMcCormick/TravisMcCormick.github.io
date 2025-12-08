@@ -1,72 +1,39 @@
 # Travis McCormick - Portfolio Website
 
-Professional portfolio website for Travis McCormick, Embedded Cybersecurity Engineer.
+This is my personal portfolio site. I'm Travis McCormick, an Embedded Cybersecurity Engineer, and this is where I share my work, experience, and how to reach me.
 
 ## 🌐 Live Site
 
-Visit the site at: [https://travismccormick.github.io](https://travismccormick.github.io)
+Visit my site at: [https://travismccormick.github.io](https://travismccormick.github.io)
 
-## ✨ Features
+## ✨ Highlights
 
-- **Multi-page design** with smooth navigation
-- **Dark/Light mode toggle** with persistent theme preference (press 'T' key) - defaults to dark
-- **Keyboard shortcuts** for power users (H/1=Home, A/2=About, P/3=Projects, R/4=Resume, S/5=Swimming, C/6=Contact)
-- **Responsive design** that works on all devices
-- **Clean, modern design** with professional royal blue color scheme
-- **Six main sections:**
-  - Home with clean section cards for easy navigation
-  - About page with table of contents, full story, education, certifications, experience, and interests
-  - Projects showcase with featured project stories
-  - Interactive resume with color & B&W PDF downloads
-  - Swimming page showcasing competitive background and achievements
-  - Contact page with all contact info and social links
+- Multi-page design with smooth navigation
+- Dark/Light mode toggle with saved preference (press `T`), defaults to dark
+- Keyboard shortcuts for quick jumps (H/1=Home, A/2=About, P/3=Projects, R/4=Resume, S/5=Swimming, C/6=Contact)
+- Responsive layout that works on all devices
+- Clean, modern look with a royal blue palette
+- Six core pages:
+  - Home with section cards for quick access
+  - About with my story, education, certifications, experience, and interests
+  - Projects with featured project stories
+  - Resume with interactive layout and PDF downloads
+  - Swimming with my competitive background and achievements
+  - Contact with all the ways to reach me
 
-## 🎨 Customization
+## 🎨 Customization Notes
 
-### Add Your Headshot Photo
+- Headshot: `assets/headshot.jpg` (recommended 400–600px square). I block right-click/selection/drag on the hero image to discourage copying.
+- Bio: I edit the "About Me" section in `index.html` when I want to update my story.
+- Projects: I drop screenshots into `assets/` (e.g., `keyboard-corne.jpg`, `keyboard-case.jpg`, `alu-breadboard.jpg`) and reference them on the Projects page.
 
-1. Add your professional headshot to the `assets/` folder
-2. Name it `headshot.jpg` or `headshot.png`
-3. Recommended size: 400x400px to 600x600px (square)
-4. See `assets/README.md` for more details
-
-### Add Your Personal Bio (Optional)
-
-Edit the "About Me" section in `index.html` to add personalized content beyond the timeline.
-
-### Add Project Photos (Optional)
-
-You can add photos of your projects to the `assets/` folder:
-- `keyboard-corne.jpg` - Your custom Corne keyboard
-- `keyboard-case.jpg` - 3D printed keyboard case
-- `alu-breadboard.jpg` - Breadboard ALU project
-- Any other project screenshots
-
-See `assets/README.md` for detailed guidelines.
-
-## 🚀 Deployment to GitHub Pages
-
-1. **Enable GitHub Pages:**
-   - Go to your repository settings
-   - Navigate to "Pages" in the sidebar
-   - Under "Source", select "Deploy from a branch"
-   - Select the `main` branch and `/ (root)` folder
-   - Click Save
-
-2. **Your site will be live at:**
-   ```
-   https://travismccormick.github.io
-   ```
-
-3. **Wait a few minutes** for the initial deployment to complete
-
-## 🛠️ Technologies Used
+## 🛠️ Technologies I Use
 
 - HTML5
 - CSS3 (with CSS Variables for theming)
 - Vanilla JavaScript
 - Font Awesome Icons
-- No build process required - pure static site
+- No build process required — it's a pure static site
 
 ## 📱 Browser Support
 
@@ -92,17 +59,15 @@ See `assets/README.md` for detailed guidelines.
 └── README.md               # This file
 ```
 
-## 📝 To-Do
+## 🔭 Future
 
-- [x] Add resume PDFs (color and B&W versions)
-- [ ] Add professional headshot to `assets/headshot.jpg`
-- [ ] Add personalized bio in the About Me section (optional)
-- [ ] Add project photos to assets folder (optional)
-- [ ] Review timeline for accuracy and add any missing milestones
+- Add a more detailed, personal bio on the About page
+- Expand project photos and write-ups
+- Review and update the timeline with recent milestones
 
 ## ⌨️ Keyboard Shortcuts
 
-Power users can navigate using keyboard shortcuts:
+I can navigate using these shortcuts:
 - **H** or **1** - Home page
 - **A** or **2** - About page
 - **P** or **3** - Projects page
