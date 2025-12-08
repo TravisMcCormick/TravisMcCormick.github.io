@@ -218,6 +218,13 @@ a:hover {
     transition: var(--transition);
 }
 
+.no-copy {
+    user-select: none;
+    -webkit-user-drag: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
 .headshot:hover {
     transform: scale(1.05);
     box-shadow: 0 25px 35px -5px rgba(37, 99, 235, 0.3);
