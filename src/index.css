@@ -1,0 +1,161 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ */
+/*  Design tokens - dark-only cyber-terminal, blue-anchored           */
+/*  One accent (blue). One semantic status color (green) for          */
+/*  "available / online" only. Nothing else gets a hue.               */
+/* ------------------------------------------------------------------ */
+@theme {
+  --color-bg: #090c12;
+  --color-surface: #0f151f;
+  --color-surface-2: #161f2d;
+  --color-border: #202b3a;
+  --color-border-bright: #31435c;
+
+  --color-ink: #e6edf6;
+  --color-ink-dim: #97a6bb;
+  --color-ink-faint: #5f7085;
+
+  --color-accent: #4c8dff;
+  --color-accent-bright: #82b4ff;
+  --color-accent-deep: #2f6fe0;
+  --color-online: #34d399;
+
+  --font-sans: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono Variable", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --radius-card: 12px;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Base                                                              */
+/* ------------------------------------------------------------------ */
+:root {
+  color-scheme: dark;
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-synthesis-weight: none;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  line-height: 1.6;
+  overflow-x: hidden;
+  /* Depth, not flat black: a cool vertical wash plus two soft blue
+     light sources bleeding in from the top corners. */
+  background-color: var(--color-bg);
+  background-image:
+    radial-gradient(60rem 40rem at 78% -8%, rgba(76, 141, 255, 0.12), transparent 60%),
+    radial-gradient(50rem 34rem at 8% 2%, rgba(47, 111, 224, 0.1), transparent 55%),
+    linear-gradient(180deg, #0b1018 0%, var(--color-bg) 42%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* PCB layer: a seamless tile authored to real board-layout rules -
+   45-degree-only routing, one uniform trace width, annular-ring vias,
+   a copper-pour hatch, and a couple of silkscreen marks. Fixed and
+   non-interactive so it never repaints on scroll; masked to fade below
+   the fold. Tune visibility with `opacity` on this rule alone. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Cdefs%3E%3Cpattern id='h' width='8' height='8' patternUnits='userSpaceOnUse' patternTransform='rotate(45)'%3E%3Cline x1='0' y1='0' x2='0' y2='8' stroke='%234c8dff' stroke-width='1' stroke-opacity='0.5'/%3E%3C/pattern%3E%3C/defs%3E%3Crect x='12' y='120' width='70' height='96' fill='url(%23h)'/%3E%3Cg fill='none' stroke='%234c8dff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round' stroke-opacity='0.5'%3E%3Cpath d='M0 60H240'/%3E%3Cpath d='M95 0V240'/%3E%3Cpath d='M185 60L150 95'/%3E%3Cpath d='M150 95V130L130 150H95'/%3E%3Cpath d='M95 150L70 175V205H150L185 170V150'/%3E%3Cpath d='M185 170L205 150H240'/%3E%3Cpath d='M0 150H95'/%3E%3C/g%3E%3Cg fill='none' stroke='%23aebfd6' stroke-width='1' stroke-opacity='0.26'%3E%3Crect x='150' y='178' width='44' height='26' rx='2'/%3E%3Cpath d='M150 191H140M204 191H214M18 20H28M23 15V25'/%3E%3C/g%3E%3Cg fill='none' stroke='%234c8dff' stroke-width='2.4' stroke-opacity='0.6'%3E%3Ccircle cx='40' cy='60' r='4.5'/%3E%3Ccircle cx='185' cy='60' r='4.5'/%3E%3Ccircle cx='150' cy='95' r='4.5'/%3E%3Ccircle cx='95' cy='150' r='4.5'/%3E%3Ccircle cx='205' cy='150' r='4.5'/%3E%3Ccircle cx='70' cy='205' r='4.5'/%3E%3C/g%3E%3Cg fill='%234c8dff' fill-opacity='0.75'%3E%3Ccircle cx='40' cy='60' r='1.1'/%3E%3Ccircle cx='185' cy='60' r='1.1'/%3E%3Ccircle cx='150' cy='95' r='1.1'/%3E%3Ccircle cx='95' cy='150' r='1.1'/%3E%3Ccircle cx='205' cy='150' r='1.1'/%3E%3Ccircle cx='70' cy='205' r='1.1'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 240px 240px;
+  mask-image: radial-gradient(ellipse 135% 100% at 50% -5%, #000 12%, transparent 82%);
+}
+
+/* Fine grain to break up the gradients and keep the dark from looking
+   plasticky. Fixed + pointer-events-none per perf guidance. */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: #06090d;
+}
+
+@layer base {
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* Discourage casual copying of the headshot, matching the old site. */
+.no-copy {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Print - clean one-pager for the Resume page (Cmd/Ctrl + P)        */
+/* ------------------------------------------------------------------ */
+@media print {
+  body {
+    background: #fff;
+    color: #000;
+  }
+  body::before {
+    display: none;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-plain {
+    background: #fff !important;
+    border-color: #ccc !important;
+    color: #000 !important;
+    box-shadow: none !important;
+  }
+  a {
+    color: #000;
+  }
+  main {
+    padding: 0 !important;
+  }
+}
