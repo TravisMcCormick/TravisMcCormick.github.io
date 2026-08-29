@@ -29,20 +29,19 @@ export type NavItem = { label: string; to: string; key: string };
 export const navItems: NavItem[] = [
   { label: "Home", to: "/", key: "h" },
   { label: "About", to: "/about", key: "a" },
-  { label: "Projects", to: "/projects", key: "p" },
   { label: "Resume", to: "/resume", key: "r" },
+  { label: "Contact", to: "/contact", key: "c" },
+  { label: "Projects", to: "/projects", key: "p" },
   { label: "Books", to: "/books", key: "k" },
   { label: "Swimming", to: "/swimming", key: "s" },
-  { label: "Contact", to: "/contact", key: "c" },
 ];
 
-// Number-key aliases kept from the original site (1 = Home, 2 = About, ...).
+// Number-key aliases: 1..6 follow the nav order (About, Resume, Contact, ...).
 export const numberAliases: Record<string, string> = {
-  "1": "/",
-  "2": "/about",
-  "3": "/projects",
-  "4": "/resume",
+  "1": "/about",
+  "2": "/resume",
+  "3": "/contact",
+  "4": "/projects",
   "5": "/books",
   "6": "/swimming",
-  "7": "/contact",
 };
