@@ -1,119 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travis McCormick - Home</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
-    <nav class="navbar">
-        <div class="container nav-container">
-            <div class="nav-brand">
-                <a href="index.html">TSM</a>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="resume.html">Resume</a></li>
-                <li><a href="swimming.html">Swimming</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-                    <i class="fas fa-moon"></i>
-                </button></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#0a0d12" />
 
-    <main>
-        <section class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <div class="hero-image">
-                        <img src="assets/headshot.jpg" alt="Travis McCormick" class="headshot no-copy" draggable="false" oncontextmenu="return false;" onselectstart="return false;">
-                    </div>
-                    <div class="hero-text">
-                        <h1>Travis McCormick</h1>
-                        <h2 class="subtitle">Embedded Cybersecurity Engineer</h2>
-                        <div class="hero-buttons">
-                            <a href="contact.html" class="btn btn-primary">Get In Touch</a>
-                            <a href="resume.html" class="btn btn-secondary">View Resume</a>
-                        </div>
-                        <div class="social-links">
-                            <a href="https://github.com/TravisMcCormick" target="_blank" aria-label="GitHub">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="https://linkedin.com/in/travissmccormick" target="_blank" aria-label="LinkedIn">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <title>Travis McCormick — Embedded Cybersecurity Engineer</title>
+    <meta
+      name="description"
+      content="Travis McCormick is an Embedded Cybersecurity Engineer working on embedded agents, WebRTC peer discovery, and network security. Projects, resume, and background."
+    />
+    <link rel="canonical" href="https://travismccormick.github.io/" />
 
-        <section class="home-sections">
-            <div class="container">
-                <div class="section-cards">
-                    <a href="about.html" class="section-card">
-                        <div class="section-icon">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <h3>About</h3>
-                        <p>Learn about my background, education, and what I'm working on.</p>
-                    </a>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Travis McCormick — Embedded Cybersecurity Engineer" />
+    <meta
+      property="og:description"
+      content="Embedded Cybersecurity Engineer. Embedded agents, WebRTC peer discovery, network security, and the things I build to fix problems I run into."
+    />
+    <meta property="og:url" content="https://travismccormick.github.io/" />
+    <meta name="twitter:card" content="summary" />
 
-                    <a href="projects.html" class="section-card">
-                        <div class="section-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h3>Projects</h3>
-                        <p>Check out the things I've built, from keyboards to web apps.</p>
-                    </a>
-
-                    <a href="resume.html" class="section-card">
-                        <div class="section-icon">
-                            <i class="fas fa-file-alt"></i>
-                        </div>
-                        <h3>Resume</h3>
-                        <p>My full professional experience and downloadable resume.</p>
-                    </a>
-
-                    <a href="swimming.html" class="section-card">
-                        <div class="section-icon">
-                            <i class="fas fa-swimmer"></i>
-                        </div>
-                        <h3>Swimming</h3>
-                        <p>My competitive swimming background and lifeguarding journey.</p>
-                    </a>
-
-                    <a href="contact.html" class="section-card">
-                        <div class="section-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <h3>Contact</h3>
-                        <p>Get in touch—I'm always open to new opportunities.</p>
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Travis McCormick. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
+    <!--
+      Single Page Apps for GitHub Pages
+      https://github.com/rafgraph/spa-github-pages
+      Decodes the redirect that public/404.html writes, so deep links work.
+    -->
+    <script>
+      (function (l) {
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
+        }
+      })(window.location);
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
-
-
