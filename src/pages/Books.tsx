@@ -67,6 +67,17 @@ function compareBooks(a: Book, b: Book) {
   return a.title.toLowerCase().localeCompare(b.title.toLowerCase());
 }
 
+/**
+ * Read shelf: rating ascending first (1, 2, 3, ...; unrated last), then fall
+ * back to author surname and series order.
+ */
+function compareReadBooks(a: Book, b: Book) {
+  const ra = a.rating > 0 ? a.rating : Infinity;
+  const rb = b.rating > 0 ? b.rating : Infinity;
+  if (ra !== rb) return ra - rb;
+  return compareBooks(a, b);
+}
+
 type Section = {
   id: string;
   label: string;
@@ -81,15 +92,15 @@ export default function Books() {
   const [query, setQuery] = useState("");
   const q = query.trim().toLowerCase();
 
-  const sift = (list: Book[]) =>
+  const sift = (list: Book[], compare: (a: Book, b: Book) => number = compareBooks) =>
     [...list]
-      .sort(compareBooks)
+      .sort(compare)
       .filter(
         (b) => !q || b.title.toLowerCase().includes(q) || b.author.toLowerCase().includes(q),
       );
 
   const current = useMemo(() => sift(currentlyReading), [currentlyReading, q]);
-  const readList = useMemo(() => sift(read), [read, q]);
+  const readList = useMemo(() => sift(read, compareReadBooks), [read, q]);
   const toReadList = useMemo(() => sift(toRead), [toRead, q]);
 
   const sections: Section[] = [
