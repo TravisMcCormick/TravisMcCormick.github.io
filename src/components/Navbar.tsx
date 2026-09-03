@@ -80,12 +80,12 @@ export function Navbar() {
                 end={item.to === "/"}
                 className={({ isActive }) =>
                   cx(
-                    "rounded-md px-3 py-3 text-[15px] transition-colors",
+                    "flex items-center gap-3 rounded-md px-3 py-3 text-[15px] transition-colors",
                     isActive ? "bg-surface-2 text-ink" : "text-ink-dim hover:text-ink",
                   )
                 }
               >
-                <span className="mr-2 font-mono text-xs text-accent">{item.key}</span>
+                <item.icon size={18} weight="duotone" className="text-accent" />
                 {item.label}
               </NavLink>
             ))}

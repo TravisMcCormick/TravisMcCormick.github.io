@@ -1,0 +1,14 @@
+# Travis McCormick
+
+> Personal portfolio site for Travis McCormick.
+
+## Usage
+
+This site does not grant permission to crawl, scrape, index, or otherwise
+collect its content, and it does not permit that content to be used for
+training, fine tuning, retrieval, or evaluation of machine learning or
+language models. Automated access by AI agents and crawlers is not allowed.
+
+See /robots.txt for the machine readable version.
+
+Contact: mccormicktravis1110@gmail.com

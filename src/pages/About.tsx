@@ -9,6 +9,7 @@ import {
 
 import { PageMeta } from "../components/PageMeta";
 import { PageHeader } from "../components/PageHeader";
+import { SectionNav } from "../components/SectionNav";
 import {
   Container,
   Panel,
@@ -42,26 +43,10 @@ export default function About() {
         title="About"
         description="Travis McCormick's background: how he got into cybersecurity, his education, certifications, work experience, and interests outside of tech."
       />
-      <PageHeader kicker="WHOAMI" title="About Me" />
+      <PageHeader kicker="whoami" title="About Me" />
 
       <Container className="grid gap-12 py-14 lg:grid-cols-[200px_1fr]">
-        <aside className="hidden lg:block">
-          <nav className="sticky top-24 space-y-1">
-            <p className="mb-3 font-mono text-[11px] uppercase tracking-widest text-ink-faint">
-              Contents
-            </p>
-            {TOC.map((item) => (
-              <a
-                key={item.id}
-                href={`#${item.id}`}
-                className="flex items-center gap-2 rounded-md px-2 py-1.5 text-sm text-ink-dim transition-colors hover:bg-surface hover:text-ink"
-              >
-                <item.icon size={15} />
-                {item.label}
-              </a>
-            ))}
-          </nav>
-        </aside>
+        <SectionNav items={TOC} />
 
         <div className="min-w-0 space-y-16">
           <section>

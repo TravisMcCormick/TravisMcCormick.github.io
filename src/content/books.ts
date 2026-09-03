@@ -1,6 +1,3 @@
-// The /books page renders books.generated.json, which is rebuilt from the
-// Goodreads currently-reading / read / to-read shelves by scripts/fetch-books.mjs
-// on every build and on the daily schedule in the deploy workflow. Do not edit.
 import data from "./books.generated.json";
 
 export type Book = {

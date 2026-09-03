@@ -44,7 +44,7 @@ export default function Contact() {
         title="Contact"
         description="Get in touch with Travis McCormick by email, phone, LinkedIn, or GitHub."
       />
-      <PageHeader kicker="./CONTACT" title="Contact" />
+      <PageHeader kicker="./contact" title="Contact" />
 
       <Container className="py-14">
         <Reveal>

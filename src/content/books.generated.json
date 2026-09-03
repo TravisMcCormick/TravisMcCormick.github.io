@@ -1,16 +1,6 @@
 {
-  "updatedAt": "2026-08-29T03:05:40.640Z",
+  "updatedAt": "2026-09-03T14:36:46.776Z",
   "currentlyReading": [
-    {
-      "id": "25689056",
-      "title": "The Inquisition (Summoner, #2)",
-      "author": "Taran Matharu",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1446573037l/25689056.jpg",
-      "rating": 0,
-      "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899076613"
-    },
     {
       "id": "7235533",
       "title": "The Way of Kings (The Stormlight Archive, #1)",
@@ -23,6 +13,16 @@
     }
   ],
   "read": [
+    {
+      "id": "11501608",
+      "title": "Flashpoint",
+      "author": "Geoff Johns",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1507329660l/11501608.jpg",
+      "rating": 5,
+      "readAt": null,
+      "addedAt": "2026-09-02",
+      "link": "https://www.goodreads.com/review/show/8914194292"
+    },
     {
       "id": "68428",
       "title": "Mistborn: The Final Empire (Mistborn, #1)",
@@ -385,6 +385,36 @@
     }
   ],
   "toRead": [
+    {
+      "id": "223329645",
+      "title": "Absolute Batman, Vol. 1: The Zoo",
+      "author": "Scott Snyder",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1773427358l/223329645._SY475_.jpg",
+      "rating": 0,
+      "readAt": null,
+      "addedAt": "2026-09-02",
+      "link": "https://www.goodreads.com/review/show/8914193807"
+    },
+    {
+      "id": "157605258",
+      "title": "Dragon Rider (The Soulbound Saga #1)",
+      "author": "Taran Matharu",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1699394395l/157605258._SY475_.jpg",
+      "rating": 0,
+      "readAt": null,
+      "addedAt": "2026-09-02",
+      "link": "https://www.goodreads.com/review/show/8914192284"
+    },
+    {
+      "id": "25689056",
+      "title": "The Inquisition (Summoner, #2)",
+      "author": "Taran Matharu",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1446573037l/25689056.jpg",
+      "rating": 0,
+      "readAt": null,
+      "addedAt": "2026-09-02",
+      "link": "https://www.goodreads.com/review/show/8899076613"
+    },
     {
       "id": "18007564",
       "title": "The Martian",

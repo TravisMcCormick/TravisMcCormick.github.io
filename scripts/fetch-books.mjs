@@ -1,16 +1,6 @@
-/**
- * Fetches the Goodreads "currently-reading", "read", and "to-read" shelf RSS
- * feeds and writes them to src/content/books.generated.json for the /books page.
- *
- * Runs before every build (see package.json "build" script) and on the daily
- * schedule in .github/workflows/deploy.yml, so shelving a book on Goodreads
- * shows up on the site within a day with no commit.
- *
- * Goodreads shut down its API, but shelf RSS feeds still work and need no auth.
- * The only input is the numeric user id, read from src/content/site.ts so there
- * is a single source of truth. If a shelf fails to fetch, the previous data for
- * that shelf is kept. The script always exits 0 so the build never breaks.
- */
+// Builds src/content/books.generated.json from the public Goodreads shelf RSS
+// feeds. Runs before every build. On any failure it keeps the previous JSON and
+// still exits 0 so the build never breaks.
 import { readFile, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { dirname, resolve } from "node:path";
@@ -22,7 +12,7 @@ const OUT = resolve(here, "../src/content/books.generated.json");
 const PLACEHOLDER = "REPLACE_WITH_YOUR_GOODREADS_ID";
 const EMPTY = { updatedAt: null, currentlyReading: [], read: [], toRead: [] };
 
-// [goodreads shelf name, sort param, key in the output JSON]
+// [shelf name, sort param, output key]
 const SHELVES = [
   ["currently-reading", "date_added", "currentlyReading"],
   ["read", "date_read", "read"],
@@ -44,7 +34,7 @@ async function readExisting() {
   }
 }
 
-/** Pull the text of <tag>...</tag>, unwrapping CDATA and decoding entities. */
+// Text of <tag>...</tag>, unwrapping CDATA and decoding common entities.
 function tag(block, name) {
   const m = block.match(new RegExp(`<${name}>([\\s\\S]*?)</${name}>`, "i"));
   if (!m) return "";

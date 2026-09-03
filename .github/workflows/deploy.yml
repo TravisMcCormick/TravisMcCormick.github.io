@@ -4,9 +4,6 @@ on:
   push:
     branches: [main]
   # Monthly rebuild so Goodreads shelf changes appear without a commit.
-  # Run it manually (workflow_dispatch) any time you want it sooner.
-  # Note: GitHub disables scheduled workflows after 60 days with no repo
-  # activity - re-enable it from the Actions tab if that happens.
   schedule:
     - cron: "17 11 1 * *"
   workflow_dispatch:
@@ -16,7 +13,6 @@ permissions:
   pages: write
   id-token: write
 
-# Let one production deploy finish before starting the next.
 concurrency:
   group: pages
   cancel-in-progress: false
@@ -26,6 +22,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - uses: actions/setup-node@v4
         with:

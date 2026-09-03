@@ -19,10 +19,10 @@ export default function Projects() {
     <>
       <PageMeta
         title="Projects"
-        description="A collection of Travis McCormick's work in cybersecurity, embedded systems, and software development, from a hand-built split keyboard to a React scheduling app."
+        description="A collection of Travis McCormick's work in cybersecurity, embedded systems, and software development, from a handbuilt split keyboard to a React scheduling app."
       />
       <PageHeader
-        kicker="LS -LA ~/PROJECTS"
+        kicker="ls -la ~/Projects"
         title="My Projects"
         intro="A collection of my work in cybersecurity, embedded systems, and software development"
       />
@@ -93,6 +93,9 @@ export default function Projects() {
                     </div>
                   </div>
                   <h3 className="mt-3 text-[15px] font-semibold text-ink">{p.title}</h3>
+                  {p.date && (
+                    <p className="mt-0.5 font-mono text-xs text-ink-faint">{p.date}</p>
+                  )}
                   <p className="mt-1.5 flex-1 text-sm text-ink-dim">{p.body}</p>
                   <div className="mt-3 flex flex-wrap gap-1.5">
                     {p.tech.map((t) => (

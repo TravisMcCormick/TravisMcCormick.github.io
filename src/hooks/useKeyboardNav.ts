@@ -2,13 +2,8 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { navItems, numberAliases } from "../content/site";
 
-/**
- * Global keyboard shortcuts, carried over from the original site:
- *   letter keys  -> jump to a page (h/a/p/r/u/s/c)
- *   number keys  -> same pages, 1..7
- *   g / b        -> scroll to top / bottom
- * Ignored while typing in an input, textarea, or contenteditable element.
- */
+// Global shortcuts: letter/number keys jump between pages, g/b scroll to
+// top/bottom. Ignored while typing in a field.
 export function useKeyboardNav() {
   const navigate = useNavigate();
 

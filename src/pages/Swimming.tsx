@@ -28,7 +28,7 @@ export default function Swimming() {
         description="Travis McCormick's competitive swimming background (2016-2021), personal best times, and how the sport led into lifeguarding, teaching, and engineering."
       />
       <PageHeader
-        kicker="~/SWIMMING"
+        kicker="~/swimming"
         title="Swimming"
         intro="From competitive swimming to lifeguarding and teaching"
       />

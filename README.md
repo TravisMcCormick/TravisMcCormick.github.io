@@ -39,14 +39,15 @@ src/
     PageHeader.tsx    Shared page title block
     PageMeta.tsx      Per-route <title> / description / og tags
     BootIntro.tsx     One-per-session terminal boot sequence (home)
+    SectionNav.tsx    Sticky side nav with scroll-spy (About, Books)
     primitives.tsx    Container, Panel, Reveal, Badge, buttons, links, Prose
   hooks/
-    useKeyboardNav.ts Keyboard shortcuts (h/a/p/r/u/k/s/c, 1-8, g/b)
-  pages/              Home, About, Projects, Resume, Uses, Books, Swimming, Contact, NotFound
+    useKeyboardNav.ts Keyboard shortcuts (h/a/r/c/p/k/s, 1-6, g/b)
+  pages/              Home, About, Projects, Resume, Books, Swimming, Contact, NotFound
   content/            All copy and structured data, one file per page
                       (books.generated.json is auto-written, do not edit)
 scripts/
-  fetch-books.mjs    Goodreads "read" shelf -> books.generated.json (build + daily cron)
+  fetch-books.mjs    Goodreads shelves -> books.generated.json (build + monthly cron)
 public/
   assets/             headshot.jpg + resume PDFs
   favicon.svg
@@ -60,7 +61,6 @@ All text lives in `src/content/`. To update a page, edit its data file — no co
 changes needed:
 
 - `now.ts` — the "Now" status strip on the home page (update often)
-- `uses.ts` — the `/uses` gear list (a few `TODO` markers to fill in)
 - `projects.ts`, `resume.ts`, `about.ts`, `swimming.ts` — page content
 - `site.ts` — name, links, nav items, keyboard shortcut keys, Goodreads id
 
@@ -71,7 +71,7 @@ the Goodreads **currently-reading**, **read**, and **to-read** shelves by
 `scripts/fetch-books.mjs` on every build and on the monthly schedule in the
 deploy workflow (1st of the month). It also refreshes on any push, and you can
 run it on demand from the Actions tab. The page shows the three shelves in that
-order with a sticky jump bar, sorts each by author then series (standalones by
+order with a sticky side nav, sorts each by author then series (standalones by
 title), has a client-side title/author search, and links to Goodreads
 recommendations.
 
@@ -83,12 +83,12 @@ cleared, the page falls back to an empty state.
 - Local: `npm run fetch:books` (also runs automatically before `npm run dev`).
 - If Goodreads is unreachable at build time, the last good JSON is kept.
 - GitHub disables scheduled workflows after 60 days of repo inactivity;
-  re-enable from the Actions tab if the daily sync stops.
+  re-enable from the Actions tab if the monthly sync stops.
 
 ## Deployment
 
 Pushing to `main` runs `.github/workflows/deploy.yml`: it builds the site and
-publishes `dist/` to GitHub Pages. It also runs daily to pick up new books.
+publishes `dist/` to GitHub Pages. It also runs monthly to pick up new books.
 
 **One-time setup:** in the repo, go to **Settings → Pages → Build and deployment**
 and set **Source** to **GitHub Actions**.
@@ -97,11 +97,10 @@ and set **Source** to **GitHub Actions**.
 
 | Key | Action | Key | Action |
 | --- | --- | --- | --- |
-| `H` / `1` | Home | `K` / `6` | Books |
-| `A` / `2` | About | `S` / `7` | Swimming |
-| `P` / `3` | Projects | `C` / `8` | Contact |
-| `R` / `4` | Resume | `G` | Scroll to top |
-| `U` / `5` | Uses | `B` | Scroll to bottom |
+| `H` | Home | `P` / `4` | Projects |
+| `A` / `1` | About | `K` / `5` | Books |
+| `R` / `2` | Resume | `S` / `6` | Swimming |
+| `C` / `3` | Contact | `G` / `B` | Scroll top / bottom |
 
 ## License
 

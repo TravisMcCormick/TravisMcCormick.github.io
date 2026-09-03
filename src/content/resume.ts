@@ -24,11 +24,11 @@ export const resumeSections: ResumeSection[] = [
         company: "EveryPeer | Winter Haven, FL",
         date: "May 2025 – Present",
         bullets: [
-          "Built an embedded agent to control WireGuard, automate config changes, and report real-time interface status.",
-          "Added network-metrics collection for IP-latency measurement and high-usage endpoint identification.",
-          "Contributed backend integrations for the customer web portal displaying embedded-device metrics.",
+          "Built an embedded agent to control WireGuard, automate config changes, and report real time interface status.",
+          "Added network metrics collection for IP latency measurement and high usage endpoint identification.",
+          "Contributed backend integrations for the customer web portal displaying embedded device metrics.",
           "Expanded the embedded controller to manage the Wi-Fi card, bridge interface, and local device modes.",
-          "Developed a WebRTC-based peer-discovery system that bootstraps automated WireGuard P2P tunnels.",
+          "Developed a WebRTC based peer discovery system that bootstraps automated WireGuard P2P tunnels.",
         ],
       },
       {
@@ -39,7 +39,7 @@ export const resumeSections: ResumeSection[] = [
           "Deciphered firmware, assigning accurate symbols to functions, improving code readability and debugging.",
           "Engineered a testing framework to validate assigned symbols and ensure system integrity.",
           "Enhanced a remote PDU control program, increasing efficiency and reliability.",
-          "Created client-specific test procedures, streamlining testing and improving client satisfaction.",
+          "Created client specific test procedures, streamlining testing and improving client satisfaction.",
         ],
       },
     ],
@@ -57,11 +57,11 @@ export const resumeSections: ResumeSection[] = [
         ],
       },
       {
-        title: "Breadboard 4-Bit Arithmetic Logic Unit",
+        title: "Breadboard 4 Bit Arithmetic Logic Unit",
         company: "Florida Polytechnic University",
         date: "October 2024 – December 2024",
         bullets: [
-          "Constructed a 4-bit Arithmetic Logic Unit (ALU) on a breadboard using discrete IC chips.",
+          "Constructed a 4 bit Arithmetic Logic Unit (ALU) on a breadboard using discrete IC chips.",
           "Integrated core ALU functions, including addition, OR, AND, XOR, NAND, and comparative logic operations.",
           "Validated ALU functionality through comprehensive testing of various input combinations.",
         ],
@@ -78,7 +78,7 @@ export const resumeSections: ResumeSection[] = [
         date: "February 2025",
       },
       {
-        text: "B-Sides Orlando In-Person CTF Champion",
+        text: "B-Sides Orlando In Person CTF Champion",
         org: "Florida Polytechnic Cybersecurity Club",
         date: "October 2024",
       },
@@ -105,11 +105,11 @@ export const resumeSections: ResumeSection[] = [
     groups: [
       {
         label: "Cybersecurity:",
-        body: "Network Security, Applied Cryptography, Secure Software Engineering, Protective & Forensic Tech For Cybersecurity, Hardware Security, Cyber-Physical Security, Embedded OS, Ethical Hacking, Cyber Design Lab",
+        body: "Network Security, Applied Cryptography, Secure Software Engineering, Protective & Forensic Tech For Cybersecurity, Hardware Security, Cyber Physical Security, Embedded OS, Ethical Hacking, Cyber Design Lab",
       },
       {
         label: "CS/CE/EE:",
-        body: "Data Structures & Algorithms, Object-Oriented Programming, Computer Architecture & Organization, Digital Logic Design, Digital Electronics, Electronic Devices, Intro to Unix, Circuits, Discrete Math, Linear Algebra",
+        body: "Data Structures & Algorithms, Object Oriented Programming, Computer Architecture & Organization, Digital Logic Design, Digital Electronics, Electronic Devices, Intro to Unix, Circuits, Discrete Math, Linear Algebra",
       },
     ],
   },

@@ -1,14 +1,18 @@
 import { useMemo, useState } from "react";
 import {
   BookOpen,
+  BookmarkSimple,
+  CheckCircle,
   Star,
   MagnifyingGlass,
   Sparkle,
   ArrowSquareOut,
 } from "@phosphor-icons/react";
+import type { Icon } from "@phosphor-icons/react";
 
 import { PageMeta } from "../components/PageMeta";
 import { PageHeader } from "../components/PageHeader";
+import { SectionNav } from "../components/SectionNav";
 import {
   AnchorButton,
   Container,
@@ -31,7 +35,6 @@ function monthYear(iso: string | null) {
   return Number.isNaN(d.getTime()) ? null : dateFmt.format(d);
 }
 
-/** Author surname for the primary sort. */
 function surname(author: string) {
   const parts = author.trim().split(/\s+/);
   return (parts[parts.length - 1] || author).toLowerCase();
@@ -45,11 +48,7 @@ function seriesOf(title: string) {
   return m ? { name: m[1].trim().toLowerCase(), num: parseFloat(m[2]) } : null;
 }
 
-/**
- * Sort by author surname, then group by series (ordered by series name, then
- * by number within it). Standalone books sort by title, interleaved with the
- * series alphabetically by their name.
- */
+// Sort by author surname, then keep series together in reading order.
 function compareBooks(a: Book, b: Book) {
   const byAuthor = surname(a.author).localeCompare(surname(b.author));
   if (byAuthor) return byAuthor;
@@ -67,11 +66,7 @@ function compareBooks(a: Book, b: Book) {
   return a.title.toLowerCase().localeCompare(b.title.toLowerCase());
 }
 
-/**
- * Read shelf: rating descending first (5, 4, 3, ...; unrated last), then fall
- * back to author surname and series order. The shelf is also split into rating
- * groups on the page, so this fixes the order those groups appear in too.
- */
+// Read shelf: highest rating first (unrated last), then author/series order.
 function compareReadBooks(a: Book, b: Book) {
   const ra = a.rating > 0 ? a.rating : -1;
   const rb = b.rating > 0 ? b.rating : -1;
@@ -79,7 +74,6 @@ function compareReadBooks(a: Book, b: Book) {
   return compareBooks(a, b);
 }
 
-/** Rating buckets for the Read shelf, in display order (5 down to unrated). */
 const RATING_ORDER = [5, 4, 3, 2, 1, 0];
 
 function groupByRating(books: Book[]) {
@@ -93,10 +87,10 @@ type Section = {
   id: string;
   label: string;
   kicker: string;
+  icon: Icon;
   books: Book[];
   showDate: boolean;
   grouped: boolean;
-  shelf: "currently-reading" | "read" | "to-read";
 };
 
 export default function Books() {
@@ -116,11 +110,12 @@ export default function Books() {
   const toReadList = useMemo(() => sift(toRead), [toRead, q]);
 
   const sections: Section[] = [
-    { id: "currently-reading", label: "Currently Reading", kicker: "01", books: current, showDate: false, grouped: false, shelf: "currently-reading" },
-    { id: "read", label: "Read", kicker: "02", books: readList, showDate: true, grouped: true, shelf: "read" },
-    { id: "want-to-read", label: "Want to Read", kicker: "03", books: toReadList, showDate: false, grouped: false, shelf: "to-read" },
+    { id: "currently-reading", label: "Currently Reading", kicker: "01", icon: BookOpen, books: current, showDate: false, grouped: false },
+    { id: "read", label: "Read", kicker: "02", icon: CheckCircle, books: readList, showDate: true, grouped: true },
+    { id: "want-to-read", label: "Want to Read", kicker: "03", icon: BookmarkSimple, books: toReadList, showDate: false, grouped: false },
   ];
   const visible = sections.filter((s) => s.books.length > 0);
+  const navItems = visible.map((s) => ({ id: s.id, label: s.label, icon: s.icon }));
 
   const nothingSynced =
     currentlyReading.length === 0 && read.length === 0 && toRead.length === 0;
@@ -133,7 +128,7 @@ export default function Books() {
         description="Books Travis McCormick is reading, has read, and wants to read, synced automatically from Goodreads."
       />
       <PageHeader
-        kicker="CAT ~/READING/*"
+        kicker="cat ~/reading/*"
         title="Books"
         intro="What I'm reading now, what I've finished, and what's next. Finished books are grouped by rating, then sorted by author and series, and everything syncs from Goodreads so this stays current on its own."
         actions={
@@ -149,25 +144,14 @@ export default function Books() {
         }
       />
 
-      {visible.length > 1 && (
-        <div className="sticky top-16 z-40 border-b border-border bg-bg/85 backdrop-blur-md">
-          <Container>
-            <nav className="flex flex-wrap gap-2 py-3" aria-label="Jump to shelf">
-              {visible.map((s) => (
-                <a
-                  key={s.id}
-                  href={`#${s.id}`}
-                  className="rounded-full border border-border px-3 py-1 font-mono text-xs text-ink-dim transition-colors hover:border-border-bright hover:text-ink"
-                >
-                  {s.label} <span className="text-ink-faint">{s.books.length}</span>
-                </a>
-              ))}
-            </nav>
-          </Container>
-        </div>
-      )}
-
-      <Container className="py-14">
+      <Container
+        className={cx(
+          "py-14",
+          !nothingSynced &&
+            visible.length > 1 &&
+            "lg:grid lg:grid-cols-[200px_1fr] lg:gap-12",
+        )}
+      >
         {nothingSynced ? (
           <Reveal>
             <Panel className="p-8 text-center">
@@ -185,64 +169,67 @@ export default function Books() {
             </Panel>
           </Reveal>
         ) : (
-          <div className="space-y-14">
-            <div className="relative max-w-sm">
-              <MagnifyingGlass
-                size={16}
-                className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-ink-faint"
-              />
-              <input
-                type="search"
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search title or author"
-                aria-label="Search books"
-                className="w-full rounded-full border border-border bg-surface-2 py-2.5 pl-10 pr-4 text-sm text-ink placeholder:text-ink-faint focus:border-accent focus:outline-none"
-              />
-            </div>
-
-            {noMatches ? (
-              <p className="text-sm text-ink-dim">
-                No books match <span className="text-ink">&ldquo;{query}&rdquo;</span>.
-              </p>
-            ) : (
-              visible.map((s) => (
-                <Shelf
-                  key={s.id}
-                  id={s.id}
-                  kicker={s.kicker}
-                  title={s.label}
-                  books={s.books}
-                  showDate={s.showDate}
-                  grouped={s.grouped}
+          <>
+            {visible.length > 1 && <SectionNav items={navItems} title="Shelves" />}
+            <div className="min-w-0 space-y-14">
+              <div className="relative max-w-sm">
+                <MagnifyingGlass
+                  size={16}
+                  className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-ink-faint"
                 />
-              ))
-            )}
+                <input
+                  type="search"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  placeholder="Search title or author"
+                  aria-label="Search books"
+                  className="w-full rounded-full border border-border bg-surface-2 py-2.5 pl-10 pr-4 text-sm text-ink placeholder:text-ink-faint focus:border-accent focus:outline-none"
+                />
+              </div>
 
-            <p className="text-xs text-ink-faint">
-              synced from Goodreads
-              {updatedAt && ` · updated ${monthYear(updatedAt) ?? "recently"}`} ·{" "}
-              <ExternalLink href={goodreadsShelfUrl("currently-reading")} className="text-xs">
-                currently reading
-              </ExternalLink>{" "}
-              ·{" "}
-              <ExternalLink href={goodreadsShelfUrl("read")} className="text-xs">
-                read
-              </ExternalLink>{" "}
-              ·{" "}
-              <ExternalLink href={goodreadsShelfUrl("to-read")} className="text-xs">
-                want to read
-              </ExternalLink>{" "}
-              ·{" "}
-              <ExternalLink href={RECOMMENDATIONS_URL} className="text-xs">
-                recommendations
-              </ExternalLink>{" "}
-              ·{" "}
-              <ExternalLink href={goodreadsProfileUrl} className="text-xs">
-                profile
-              </ExternalLink>
-            </p>
-          </div>
+              {noMatches ? (
+                <p className="text-sm text-ink-dim">
+                  No books match <span className="text-ink">&ldquo;{query}&rdquo;</span>.
+                </p>
+              ) : (
+                visible.map((s) => (
+                  <Shelf
+                    key={s.id}
+                    id={s.id}
+                    kicker={s.kicker}
+                    title={s.label}
+                    books={s.books}
+                    showDate={s.showDate}
+                    grouped={s.grouped}
+                  />
+                ))
+              )}
+
+              <p className="text-xs text-ink-faint">
+                synced from Goodreads
+                {updatedAt && ` · updated ${monthYear(updatedAt) ?? "recently"}`} ·{" "}
+                <ExternalLink href={goodreadsShelfUrl("currently-reading")} className="text-xs">
+                  currently reading
+                </ExternalLink>{" "}
+                ·{" "}
+                <ExternalLink href={goodreadsShelfUrl("read")} className="text-xs">
+                  read
+                </ExternalLink>{" "}
+                ·{" "}
+                <ExternalLink href={goodreadsShelfUrl("to-read")} className="text-xs">
+                  want to read
+                </ExternalLink>{" "}
+                ·{" "}
+                <ExternalLink href={RECOMMENDATIONS_URL} className="text-xs">
+                  recommendations
+                </ExternalLink>{" "}
+                ·{" "}
+                <ExternalLink href={goodreadsProfileUrl} className="text-xs">
+                  profile
+                </ExternalLink>
+              </p>
+            </div>
+          </>
         )}
       </Container>
     </>

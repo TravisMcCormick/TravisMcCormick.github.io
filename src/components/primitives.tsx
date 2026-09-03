@@ -1,15 +1,13 @@
 import type { AnchorHTMLAttributes, ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { motion, useReducedMotion } from "motion/react";
+import { GithubLogo, LinkedinLogo, EnvelopeSimple } from "@phosphor-icons/react";
+import { site } from "../content/site";
 
-/** Join class names, dropping falsy values. */
 export function cx(...parts: (string | false | null | undefined)[]) {
   return parts.filter(Boolean).join(" ");
 }
 
-/* ------------------------------------------------------------------ */
-/*  Buttons - one shape system: pill, two variants                    */
-/* ------------------------------------------------------------------ */
 type ButtonVariant = "primary" | "secondary";
 
 const BUTTON_BASE =
@@ -25,7 +23,6 @@ export function buttonClass(variant: ButtonVariant = "primary", extra?: string) 
   return cx(BUTTON_BASE, BUTTON_VARIANTS[variant], extra);
 }
 
-/** Internal route button. */
 export function LinkButton({
   to,
   variant = "primary",
@@ -44,7 +41,6 @@ export function LinkButton({
   );
 }
 
-/** External / download anchor button. */
 export function AnchorButton({
   variant = "primary",
   className,
@@ -58,12 +54,8 @@ export function AnchorButton({
   );
 }
 
-/* ------------------------------------------------------------------ */
-/*  Reveal - fade + rise on mount. Honors reduced motion.             */
-/*  Mount-triggered (not scroll-triggered) on purpose: scroll-gated   */
-/*  reveals can stay invisible above the fold until the first scroll  */
-/*  event nudges the IntersectionObserver. This is always reliable.   */
-/* ------------------------------------------------------------------ */
+// Fade + rise on mount (not on scroll, so above-the-fold content is never
+// stuck invisible). Honors reduced motion.
 const MOTION_TAGS = {
   div: motion.div,
   li: motion.li,
@@ -97,9 +89,6 @@ export function Reveal({
   );
 }
 
-/* ------------------------------------------------------------------ */
-/*  Layout shell                                                      */
-/* ------------------------------------------------------------------ */
 export function Container({
   children,
   className,
@@ -110,9 +99,6 @@ export function Container({
   return <div className={cx("mx-auto w-full max-w-5xl px-5 sm:px-8", className)}>{children}</div>;
 }
 
-/* ------------------------------------------------------------------ */
-/*  Panel - the one card treatment used everywhere                    */
-/* ------------------------------------------------------------------ */
 export function Panel({
   children,
   className,
@@ -137,9 +123,6 @@ export function Panel({
   );
 }
 
-/* ------------------------------------------------------------------ */
-/*  Section heading with a mono kicker                                */
-/* ------------------------------------------------------------------ */
 export function SectionTitle({
   children,
   kicker,
@@ -159,9 +142,6 @@ export function SectionTitle({
   );
 }
 
-/* ------------------------------------------------------------------ */
-/*  Badge / tech pill                                                 */
-/* ------------------------------------------------------------------ */
 export function Badge({ children }: { children: ReactNode }) {
   return (
     <span className="inline-flex items-center rounded-md border border-border bg-surface-2 px-2.5 py-1 font-mono text-xs text-ink-dim">
@@ -170,9 +150,6 @@ export function Badge({ children }: { children: ReactNode }) {
   );
 }
 
-/* ------------------------------------------------------------------ */
-/*  Links                                                             */
-/* ------------------------------------------------------------------ */
 export function ExternalLink({
   href,
   children,
@@ -197,24 +174,66 @@ export function ExternalLink({
   );
 }
 
-/* ------------------------------------------------------------------ */
-/*  Company mentions - always linked, with a fixed color per company  */
-/* ------------------------------------------------------------------ */
+// GitHub / LinkedIn (+ optional email) icon buttons, used in the header and footer.
+export function SocialLinks({
+  size = "sm",
+  email = false,
+  className,
+}: {
+  size?: "sm" | "md";
+  email?: boolean;
+  className?: string;
+}) {
+  const iconSize = size === "md" ? 20 : 18;
+  const box = cx(
+    "grid place-items-center rounded-md border border-border transition-colors hover:border-border-bright hover:text-ink",
+    size === "md" ? "size-10 text-ink-dim" : "size-9",
+  );
+  return (
+    <div className={cx("flex items-center gap-2", className)}>
+      <a href={site.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className={box}>
+        <GithubLogo size={iconSize} />
+      </a>
+      <a href={site.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className={box}>
+        <LinkedinLogo size={iconSize} />
+      </a>
+      {email && (
+        <a href={`mailto:${site.email}`} aria-label="Email" className={box}>
+          <EnvelopeSimple size={iconSize} />
+        </a>
+      )}
+    </div>
+  );
+}
+
+// Known org names get auto-linked in body copy, one fixed color each.
+// "Poly Purple" (#501D83) is too dark on the dark bg, so links use a tint of it.
 const GREEN_LINK = "text-online underline-offset-4 transition-colors hover:underline";
 const BLUE_LINK =
   "text-accent underline-offset-4 transition-colors hover:text-accent-bright hover:underline";
+const POLY_PURPLE =
+  "text-[#a883e0] underline-offset-4 transition-colors hover:text-[#c4aaec] hover:underline";
 
+// Longer names first so they win over shorter ones they contain.
 const COMPANY_LINKS: { label: string; href: string; className: string }[] = [
   { label: "EveryPeer", href: "https://everypeer.net/", className: GREEN_LINK },
-  // Longer form first so "ICR, Inc." wins over the bare "ICR" alternative.
   { label: "ICR, Inc.", href: "https://www.icr-team.com/", className: BLUE_LINK },
   { label: "ICR", href: "https://www.icr-team.com/", className: BLUE_LINK },
+  {
+    label: "Florida Polytechnic Cybersecurity Club",
+    href: "https://floridapoly.presence.io/organization/cybersecurity-club",
+    className: POLY_PURPLE,
+  },
+  {
+    label: "Florida Polytechnic University",
+    href: "https://floridapoly.edu/",
+    className: POLY_PURPLE,
+  },
 ];
 
 const escapeRe = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 const COMPANY_RE = new RegExp(`(${COMPANY_LINKS.map((c) => escapeRe(c.label)).join("|")})`, "g");
 
-/** Render a string, turning every known company name into an external link. */
 export function linkifyCompanies(text: string): ReactNode {
   if (!COMPANY_LINKS.some((c) => text.includes(c.label))) return text;
   return text.split(COMPANY_RE).map((part, i) => {
@@ -235,9 +254,6 @@ export function linkifyCompanies(text: string): ReactNode {
   });
 }
 
-/* ------------------------------------------------------------------ */
-/*  Prose block - consistent paragraph rhythm and measure            */
-/* ------------------------------------------------------------------ */
 export function Prose({
   paragraphs,
   className,

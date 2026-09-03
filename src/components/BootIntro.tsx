@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { cx } from "./primitives";
 
 const SESSION_KEY = "tsm.boot.seen";
+const OK = "[ ok ]";
 
 const LINES = [
   "travis@portfolio:~$ ./init",
@@ -11,11 +12,8 @@ const LINES = [
   "[ ok ]  welcome",
 ];
 
-/**
- * Short terminal-style boot sequence over the home hero. Runs once per browser
- * session, is skippable with any key / click / tap, and is skipped entirely
- * when the visitor prefers reduced motion.
- */
+// One-per-session terminal boot animation over the home hero. Skippable with
+// any key/click, and skipped entirely under prefers-reduced-motion.
 export function BootIntro({ onDone }: { onDone: () => void }) {
   const [visibleLines, setVisibleLines] = useState(0);
   const [closing, setClosing] = useState(false);
@@ -27,7 +25,7 @@ export function BootIntro({ onDone }: { onDone: () => void }) {
     try {
       sessionStorage.setItem(SESSION_KEY, "1");
     } catch {
-      /* private mode - ignore */
+      /* private mode */
     }
     window.setTimeout(onDone, 320);
   }, [closing, onDone]);
@@ -37,7 +35,6 @@ export function BootIntro({ onDone }: { onDone: () => void }) {
       timers.current.push(window.setTimeout(() => setVisibleLines(i + 1), 260 * (i + 1)));
     });
     timers.current.push(window.setTimeout(finish, 260 * LINES.length + 650));
-
     return () => {
       timers.current.forEach(clearTimeout);
       timers.current = [];
@@ -63,18 +60,21 @@ export function BootIntro({ onDone }: { onDone: () => void }) {
       role="presentation"
     >
       <div className="w-full max-w-md px-6 font-mono text-[13px] leading-7">
-        {LINES.slice(0, visibleLines).map((line, i) => (
-          <div key={i} className={line.startsWith("[ ok ]") ? "text-ink-dim" : "text-ink"}>
-            {line.startsWith("[ ok ]") ? (
-              <>
-                <span className="text-online">[ ok ]</span>
-                {line.slice(6)}
-              </>
-            ) : (
-              line
-            )}
-          </div>
-        ))}
+        {LINES.slice(0, visibleLines).map((line, i) => {
+          const ok = line.startsWith(OK);
+          return (
+            <div key={i} className={ok ? "text-ink-dim" : "text-ink"}>
+              {ok ? (
+                <>
+                  <span className="text-online">{OK}</span>
+                  {line.slice(OK.length)}
+                </>
+              ) : (
+                line
+              )}
+            </div>
+          );
+        })}
         <span className="inline-block h-4 w-2 translate-y-[3px] animate-pulse bg-accent" />
         <p className="mt-6 text-[11px] text-ink-faint">press any key to skip</p>
       </div>
@@ -82,11 +82,9 @@ export function BootIntro({ onDone }: { onDone: () => void }) {
   );
 }
 
-/** True when the boot sequence should play for this visitor / session. */
 export function shouldPlayBoot(): boolean {
   if (typeof window === "undefined") return false;
-  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (prefersReduced) return false;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return false;
   try {
     return sessionStorage.getItem(SESSION_KEY) !== "1";
   } catch {
