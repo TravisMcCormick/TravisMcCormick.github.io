@@ -9,6 +9,8 @@ export type Book = {
   readAt: string | null;
   addedAt: string | null;
   link: string;
+  owned: boolean;
+  audiobook: boolean;
 };
 
 export const booksData = data as unknown as {

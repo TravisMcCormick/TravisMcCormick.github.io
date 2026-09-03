@@ -71,12 +71,22 @@ the Goodreads **currently-reading**, **read**, and **to-read** shelves by
 `scripts/fetch-books.mjs` on every build and on the monthly schedule in the
 deploy workflow (1st of the month). It also refreshes on any push, and you can
 run it on demand from the Actions tab. The page shows the three shelves in that
-order with a sticky side nav, sorts each by author then series (standalones by
-title), has a client-side title/author search, and links to Goodreads
-recommendations.
+order with a sticky side rail (shelf nav + tag key), sorts each by author then
+series (standalones by title), has a client-side title/author search, and links
+to the Goodreads profile.
+
+Two custom shelves are read as tags, not sections: books on **owned** get a gold
+`Books` icon and books on **audiobooks** get a violet `Headphones` icon in the
+card's meta row (`text-owned` / `text-audio` tokens in `index.css`). The key
+("Owned" / "Audiobook" chips) sits under the shelf nav on desktop, under the
+search box otherwise, and doubles as a filter — clicking a chip narrows every
+shelf to titles with that tag; both together is an AND, and the shelf grid
+re-reveals on each change. Add/remove a flag by shelving the book on Goodreads.
+New tag shelves go in `TAG_SHELVES` in `fetch-books.mjs` plus the `Book` type and
+card in `src/pages/Books.tsx`.
 
 **Setup is done:** the Goodreads id lives in `site.ts` → `goodreadsUserId`
-(the digits in the profile URL). Both shelves must stay public. If the id is
+(the digits in the profile URL). All shelves must stay public. If the id is
 cleared, the page falls back to an empty state.
 
 - Manual refresh: Actions tab → "Deploy to GitHub Pages" → "Run workflow".

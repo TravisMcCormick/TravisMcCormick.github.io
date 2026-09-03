@@ -2,10 +2,11 @@ import { useMemo, useState } from "react";
 import {
   BookOpen,
   BookmarkSimple,
+  Books as BooksIcon,
   CheckCircle,
+  Headphones,
   Star,
   MagnifyingGlass,
-  Sparkle,
   ArrowSquareOut,
 } from "@phosphor-icons/react";
 import type { Icon } from "@phosphor-icons/react";
@@ -24,8 +25,6 @@ import {
 } from "../components/primitives";
 import { goodreadsProfileUrl, goodreadsShelfUrl } from "../content/site";
 import { booksData, type Book } from "../content/books";
-
-const RECOMMENDATIONS_URL = "https://www.goodreads.com/recommendations";
 
 const dateFmt = new Intl.DateTimeFormat("en-US", { month: "short", year: "numeric" });
 
@@ -98,16 +97,32 @@ export default function Books() {
   const [query, setQuery] = useState("");
   const q = query.trim().toLowerCase();
 
+  // Click the key chips to narrow the shelves to owned / audiobook titles.
+  const [tags, setTags] = useState({ owned: false, audiobook: false });
+  const toggleTag = (key: "owned" | "audiobook") =>
+    setTags((t) => ({ ...t, [key]: !t[key] }));
+  const tagsOn = tags.owned || tags.audiobook;
+
   const sift = (list: Book[], compare: (a: Book, b: Book) => number = compareBooks) =>
     [...list]
       .sort(compare)
       .filter(
         (b) => !q || b.title.toLowerCase().includes(q) || b.author.toLowerCase().includes(q),
-      );
+      )
+      .filter((b) => (!tags.owned || b.owned) && (!tags.audiobook || b.audiobook));
 
-  const current = useMemo(() => sift(currentlyReading), [currentlyReading, q]);
-  const readList = useMemo(() => sift(read, compareReadBooks), [read, q]);
-  const toReadList = useMemo(() => sift(toRead), [toRead, q]);
+  const current = useMemo(
+    () => sift(currentlyReading),
+    [currentlyReading, q, tags.owned, tags.audiobook],
+  );
+  const readList = useMemo(
+    () => sift(read, compareReadBooks),
+    [read, q, tags.owned, tags.audiobook],
+  );
+  const toReadList = useMemo(
+    () => sift(toRead),
+    [toRead, q, tags.owned, tags.audiobook],
+  );
 
   const sections: Section[] = [
     { id: "currently-reading", label: "Currently Reading", kicker: "01", icon: BookOpen, books: current, showDate: false, grouped: false },
@@ -117,9 +132,20 @@ export default function Books() {
   const visible = sections.filter((s) => s.books.length > 0);
   const navItems = visible.map((s) => ({ id: s.id, label: s.label, icon: s.icon }));
 
+  const anyFlagged = [currentlyReading, read, toRead].some((list) =>
+    list.some((b) => b.owned || b.audiobook),
+  );
+
   const nothingSynced =
     currentlyReading.length === 0 && read.length === 0 && toRead.length === 0;
   const noMatches = !nothingSynced && visible.length === 0;
+
+  // The side rail stays put based on how many shelves have data at all, so
+  // filtering down to one shelf doesn't collapse the layout or move the key.
+  const shelvesWithData = [currentlyReading, read, toRead].filter(
+    (l) => l.length > 0,
+  ).length;
+  const showRail = shelvesWithData > 1;
 
   return (
     <>
@@ -128,28 +154,27 @@ export default function Books() {
         description="Books Travis McCormick is reading, has read, and wants to read, synced automatically from Goodreads."
       />
       <PageHeader
+        wide
         kicker="cat ~/reading/*"
         title="Books"
-        intro="What I'm reading now, what I've finished, and what's next. Finished books are grouped by rating, then sorted by author and series, and everything syncs from Goodreads so this stays current on its own."
+        intro="What I'm reading now, what I've finished, and what's next. Finished books are grouped by rating, then sorted by author and series, and everything syncs from Goodreads so this stays current on its own. Add me on Goodreads if you'd like to send a recommendation my way."
         actions={
           <AnchorButton
-            href={RECOMMENDATIONS_URL}
+            href={goodreadsProfileUrl}
             target="_blank"
             rel="noopener noreferrer"
             variant="secondary"
           >
-            <Sparkle size={15} weight="fill" />
-            Goodreads recommendations
+            <ArrowSquareOut size={15} weight="bold" />
+            Goodreads profile
           </AnchorButton>
         }
       />
 
       <Container
         className={cx(
-          "py-14",
-          !nothingSynced &&
-            visible.length > 1 &&
-            "lg:grid lg:grid-cols-[200px_1fr] lg:gap-12",
+          "max-w-7xl py-14",
+          showRail && "lg:grid lg:grid-cols-[180px_1fr] lg:gap-10",
         )}
       >
         {nothingSynced ? (
@@ -170,31 +195,70 @@ export default function Books() {
           </Reveal>
         ) : (
           <>
-            {visible.length > 1 && <SectionNav items={navItems} title="Shelves" />}
+            {showRail && (
+              <div className="hidden lg:block">
+                <div className="sticky top-24 space-y-6">
+                  <SectionNav items={navItems} title="Shelves" />
+                  {anyFlagged && (
+                    <div>
+                      <p className="mb-2.5 font-mono text-[11px] uppercase tracking-widest text-ink-faint">
+                        Tags
+                      </p>
+                      <TagKey
+                        tags={tags}
+                        onToggle={toggleTag}
+                        onClear={() => setTags({ owned: false, audiobook: false })}
+                        orientation="col"
+                      />
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
             <div className="min-w-0 space-y-14">
-              <div className="relative max-w-sm">
-                <MagnifyingGlass
-                  size={16}
-                  className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-ink-faint"
-                />
-                <input
-                  type="search"
-                  value={query}
-                  onChange={(e) => setQuery(e.target.value)}
-                  placeholder="Search title or author"
-                  aria-label="Search books"
-                  className="w-full rounded-full border border-border bg-surface-2 py-2.5 pl-10 pr-4 text-sm text-ink placeholder:text-ink-faint focus:border-accent focus:outline-none"
-                />
+              <div>
+                <div className="relative max-w-sm">
+                  <MagnifyingGlass
+                    size={16}
+                    className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-ink-faint"
+                  />
+                  <input
+                    type="search"
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                    placeholder="Search title or author"
+                    aria-label="Search books"
+                    className="w-full rounded-full border border-border bg-surface-2 py-2.5 pl-10 pr-4 text-sm text-ink placeholder:text-ink-faint focus:border-accent focus:outline-none"
+                  />
+                </div>
+
+                {anyFlagged && (
+                  <TagKey
+                    tags={tags}
+                    onToggle={toggleTag}
+                    onClear={() => setTags({ owned: false, audiobook: false })}
+                    orientation="row"
+                    className={cx("mt-3", showRail && "lg:hidden")}
+                  />
+                )}
               </div>
 
               {noMatches ? (
                 <p className="text-sm text-ink-dim">
-                  No books match <span className="text-ink">&ldquo;{query}&rdquo;</span>.
+                  {q ? (
+                    <>
+                      No books match{" "}
+                      <span className="text-ink">&ldquo;{query}&rdquo;</span>
+                      {tagsOn && " with those filters"}.
+                    </>
+                  ) : (
+                    <>No books match those filters.</>
+                  )}
                 </p>
               ) : (
                 visible.map((s) => (
                   <Shelf
-                    key={s.id}
+                    key={`${s.id}:${tags.owned ? "o" : "-"}${tags.audiobook ? "a" : "-"}`}
                     id={s.id}
                     kicker={s.kicker}
                     title={s.label}
@@ -218,10 +282,6 @@ export default function Books() {
                 ·{" "}
                 <ExternalLink href={goodreadsShelfUrl("to-read")} className="text-xs">
                   want to read
-                </ExternalLink>{" "}
-                ·{" "}
-                <ExternalLink href={RECOMMENDATIONS_URL} className="text-xs">
-                  recommendations
                 </ExternalLink>{" "}
                 ·{" "}
                 <ExternalLink href={goodreadsProfileUrl} className="text-xs">
@@ -315,6 +375,87 @@ function RatingGroup({
   );
 }
 
+// One chip in the key under the search box. Doubles as a filter toggle.
+function TagToggle({
+  icon: IconCmp,
+  label,
+  tone,
+  active,
+  onClick,
+}: {
+  icon: Icon;
+  label: string;
+  tone: string;
+  active: boolean;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-pressed={active}
+      className={cx(
+        "inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 font-mono text-[11px] uppercase tracking-wide transition-colors",
+        active
+          ? cx(tone, "border-current bg-white/5")
+          : "border-border text-ink-faint hover:border-border-bright hover:text-ink-dim",
+      )}
+    >
+      <IconCmp size={13} weight="fill" className={tone} />
+      {label}
+    </button>
+  );
+}
+
+// The key under the search box / beside the shelf nav. Chips double as filters.
+function TagKey({
+  tags,
+  onToggle,
+  onClear,
+  orientation = "row",
+  className,
+}: {
+  tags: { owned: boolean; audiobook: boolean };
+  onToggle: (key: "owned" | "audiobook") => void;
+  onClear: () => void;
+  orientation?: "row" | "col";
+  className?: string;
+}) {
+  return (
+    <div
+      className={cx(
+        "flex gap-2",
+        orientation === "col" ? "flex-col items-start" : "flex-wrap items-center",
+        className,
+      )}
+    >
+      <TagToggle
+        icon={BooksIcon}
+        label="Owned"
+        tone="text-owned"
+        active={tags.owned}
+        onClick={() => onToggle("owned")}
+      />
+      <TagToggle
+        icon={Headphones}
+        label="Audiobook"
+        tone="text-audio"
+        active={tags.audiobook}
+        onClick={() => onToggle("audiobook")}
+      />
+      {(tags.owned || tags.audiobook) && (
+        <button
+          type="button"
+          onClick={onClear}
+          className="font-mono text-[11px] uppercase tracking-wide text-ink-faint underline-offset-4 transition-colors hover:text-ink-dim hover:underline"
+        >
+          Clear
+        </button>
+      )}
+    </div>
+  );
+}
+
 function BookGrid({
   books,
   showDate,
@@ -325,7 +466,7 @@ function BookGrid({
   showRating?: boolean;
 }) {
   return (
-    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
       {books.map((book, i) => (
         <Reveal key={book.id || book.title} delay={Math.min(i, 8) * 0.03}>
           <BookCard book={book} showDate={showDate} showRating={showRating} />
@@ -346,6 +487,7 @@ function BookCard({
 }) {
   const read = showDate ? monthYear(book.readAt) : null;
   const stars = showRating && book.rating > 0;
+  const tags = book.owned || book.audiobook;
 
   return (
     <a
@@ -371,12 +513,12 @@ function BookCard({
           )}
         </div>
 
-        <div className="flex min-w-0 flex-col">
+        <div className="flex min-w-0 flex-1 flex-col">
           <h3 className="text-sm font-semibold leading-snug text-ink">{book.title}</h3>
           <p className="mt-0.5 text-sm text-ink-dim">{book.author}</p>
 
-          {(stars || read) && (
-            <div className="mt-auto flex items-center gap-2 pt-3">
+          {(stars || read || tags) && (
+            <div className="mt-auto flex flex-wrap items-center gap-x-2 gap-y-1 pt-3">
               {stars && (
                 <span
                   className="flex items-center gap-0.5"
@@ -393,6 +535,20 @@ function BookCard({
                 </span>
               )}
               {read && <span className="font-mono text-[11px] text-ink-faint">{read}</span>}
+              {tags && (
+                <span className="ml-auto flex items-center gap-1.5 pl-1">
+                  {book.owned && (
+                    <BooksIcon size={13} weight="fill" className="text-owned">
+                      <title>I own a copy</title>
+                    </BooksIcon>
+                  )}
+                  {book.audiobook && (
+                    <Headphones size={13} weight="fill" className="text-audio">
+                      <title>Read and listened to the audiobook</title>
+                    </Headphones>
+                  )}
+                </span>
+              )}
             </div>
           )}
         </div>

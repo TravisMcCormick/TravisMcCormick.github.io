@@ -3,6 +3,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import { motion, useReducedMotion } from "motion/react";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
+import { BackToTop } from "./BackToTop";
 import { useKeyboardNav } from "../hooks/useKeyboardNav";
 
 export function Layout() {
@@ -28,6 +29,7 @@ export function Layout() {
         <Outlet />
       </motion.main>
       <Footer />
+      <BackToTop />
     </>
   );
 }

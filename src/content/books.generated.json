@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-03T14:36:46.776Z",
+  "updatedAt": "2026-09-03T17:20:25.477Z",
   "currentlyReading": [
     {
       "id": "7235533",
@@ -8,21 +8,13 @@
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1659905828l/7235533._SY475_.jpg",
       "rating": 0,
       "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899072810"
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899072810",
+      "owned": true,
+      "audiobook": false
     }
   ],
   "read": [
-    {
-      "id": "11501608",
-      "title": "Flashpoint",
-      "author": "Geoff Johns",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1507329660l/11501608.jpg",
-      "rating": 5,
-      "readAt": null,
-      "addedAt": "2026-09-02",
-      "link": "https://www.goodreads.com/review/show/8914194292"
-    },
     {
       "id": "68428",
       "title": "Mistborn: The Final Empire (Mistborn, #1)",
@@ -30,8 +22,10 @@
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1617768316l/68428._SY475_.jpg",
       "rating": 5,
       "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899072774"
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899072774",
+      "owned": true,
+      "audiobook": true
     },
     {
       "id": "764347",
@@ -40,8 +34,10 @@
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1297677706l/764347.jpg",
       "rating": 4,
       "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899075106"
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899075106",
+      "owned": true,
+      "audiobook": false
     },
     {
       "id": "133518",
@@ -50,8 +46,10 @@
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1424663847l/133518.jpg",
       "rating": 5,
       "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899087064"
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899087064",
+      "owned": true,
+      "audiobook": false
     },
     {
       "id": "68429",
@@ -60,8 +58,10 @@
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1619538925l/68429._SY475_.jpg",
       "rating": 5,
       "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899072836"
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899072836",
+      "owned": true,
+      "audiobook": true
     },
     {
       "id": "2767793",
@@ -70,8 +70,10 @@
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1628563911l/2767793._SY475_.jpg",
       "rating": 5,
       "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899072913"
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899072913",
+      "owned": true,
+      "audiobook": true
     },
     {
       "id": "7327326",
@@ -80,8 +82,10 @@
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1348428216l/7327326.jpg",
       "rating": 2,
       "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899079864"
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899079864",
+      "owned": true,
+      "audiobook": false
     },
     {
       "id": "13545075",
@@ -90,8 +94,10 @@
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1337871062l/13545075.jpg",
       "rating": 3,
       "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899075170"
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899075170",
+      "owned": true,
+      "audiobook": false
     },
     {
       "id": "10739664",
@@ -100,8 +106,10 @@
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1368443251l/10739664.jpg",
       "rating": 3,
       "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899084729"
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899084729",
+      "owned": true,
+      "audiobook": false
     },
     {
       "id": "11115434",
@@ -110,8 +118,22 @@
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1317833510l/11115434.jpg",
       "rating": 2,
       "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899085553"
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899085553",
+      "owned": true,
+      "audiobook": false
+    },
+    {
+      "id": "11501608",
+      "title": "Flashpoint",
+      "author": "Geoff Johns",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1507329660l/11501608.jpg",
+      "rating": 5,
+      "readAt": null,
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8914194292",
+      "owned": true,
+      "audiobook": false
     },
     {
       "id": "12317217",
@@ -120,8 +142,10 @@
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1328310097l/12317217.jpg",
       "rating": 2,
       "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899079904"
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899079904",
+      "owned": true,
+      "audiobook": false
     },
     {
       "id": "12792658",
@@ -130,8 +154,10 @@
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1378899523l/12792658.jpg",
       "rating": 3,
       "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899075296"
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899075296",
+      "owned": true,
+      "audiobook": false
     },
     {
       "id": "13294266",
@@ -140,8 +166,202 @@
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1340411177l/13294266.jpg",
       "rating": 2,
       "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899085156"
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899085156",
+      "owned": true,
+      "audiobook": false
+    },
+    {
+      "id": "15802794",
+      "title": "Once Upon the End (Half Upon a Time, #3)",
+      "author": "James  Riley",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1413166779l/15802794.jpg",
+      "rating": 2,
+      "readAt": null,
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899079945",
+      "owned": true,
+      "audiobook": false
+    },
+    {
+      "id": "18635086",
+      "title": "The Eighth Day (Eighth Day, #1)",
+      "author": "Dianne K. Salerni",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1382468899l/18635086.jpg",
+      "rating": 3,
+      "readAt": null,
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899080846",
+      "owned": true,
+      "audiobook": false
+    },
+    {
+      "id": "22525534",
+      "title": "H2O (The Rain, #1)",
+      "author": "Virginia Bergin",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1404109130l/22525534.jpg",
+      "rating": 0,
+      "readAt": null,
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899078829",
+      "owned": true,
+      "audiobook": false
+    },
+    {
+      "id": "22297138",
+      "title": "The Novice (Summoner, #1)",
+      "author": "Taran Matharu",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1410888223l/22297138.jpg",
+      "rating": 4,
+      "readAt": null,
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899076591",
+      "owned": true,
+      "audiobook": false
+    },
+    {
+      "id": "22753693",
+      "title": "The Storm (The Rain, #2)",
+      "author": "Virginia Bergin",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1415039702l/22753693.jpg",
+      "rating": 0,
+      "readAt": null,
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899079163",
+      "owned": true,
+      "audiobook": false
+    },
+    {
+      "id": "23173254",
+      "title": "The Neptune Challenge (The Neptune Project, #2)",
+      "author": "Polly Holyoke",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1423894907l/23173254.jpg",
+      "rating": 2,
+      "readAt": null,
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899084755",
+      "owned": true,
+      "audiobook": false
+    },
+    {
+      "id": "28374007",
+      "title": "Three Dark Crowns (Three Dark Crowns, #1)",
+      "author": "Kendare Blake",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1469265712l/28374007._SY475_.jpg",
+      "rating": 0,
+      "readAt": null,
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899083227",
+      "owned": true,
+      "audiobook": false
+    },
+    {
+      "id": "26465507",
+      "title": "My Sister Rosa",
+      "author": "Justine Larbalestier",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1442145654l/26465507._SY475_.jpg",
+      "rating": 3,
+      "readAt": null,
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899082690",
+      "owned": true,
+      "audiobook": false
+    },
+    {
+      "id": "28954189",
+      "title": "Scythe (Arc of a Scythe, #1)",
+      "author": "Neal Shusterman",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1456172676l/28954189.jpg",
+      "rating": 5,
+      "readAt": null,
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899075031",
+      "owned": true,
+      "audiobook": false
+    },
+    {
+      "id": "29923707",
+      "title": "One Dark Throne (Three Dark Crowns, #2)",
+      "author": "Kendare Blake",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1487862160l/29923707._SY475_.jpg",
+      "rating": 0,
+      "readAt": null,
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899083258",
+      "owned": true,
+      "audiobook": false
+    },
+    {
+      "id": "33555224",
+      "title": "Thunderhead (Arc of a Scythe, #2)",
+      "author": "Neal Shusterman",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1505658534l/33555224._SY475_.jpg",
+      "rating": 5,
+      "readAt": null,
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899075069",
+      "owned": true,
+      "audiobook": false
+    },
+    {
+      "id": "33876440",
+      "title": "This Mortal Coil (This Mortal Coil, #1)",
+      "author": "Emily Suvada",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1489514460l/33876440._SY475_.jpg",
+      "rating": 3,
+      "readAt": null,
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899078316",
+      "owned": true,
+      "audiobook": false
+    },
+    {
+      "id": "40307363",
+      "title": "Two Dark Reigns (Three Dark Crowns, #3)",
+      "author": "Kendare Blake",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1529052000l/40307363.jpg",
+      "rating": 3,
+      "readAt": null,
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899083296",
+      "owned": true,
+      "audiobook": false
+    },
+    {
+      "id": "38316465",
+      "title": "This Cruel Design (This Mortal Coil, #2)",
+      "author": "Emily Suvada",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1578887736l/38316465._SY475_.jpg",
+      "rating": 3,
+      "readAt": null,
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899078356",
+      "owned": true,
+      "audiobook": false
+    },
+    {
+      "id": "50948654",
+      "title": "This Vicious Cure (This Mortal Coil, #3)",
+      "author": "Emily Suvada",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1577621764l/50948654._SX318_SY475_.jpg",
+      "rating": 3,
+      "readAt": null,
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899078406",
+      "owned": true,
+      "audiobook": false
+    },
+    {
+      "id": "54493401",
+      "title": "Project Hail Mary",
+      "author": "Andy Weir",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1764703833l/54493401._SY475_.jpg",
+      "rating": 5,
+      "readAt": null,
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899073791",
+      "owned": true,
+      "audiobook": true
     },
     {
       "id": "13326831",
@@ -151,17 +371,9 @@
       "rating": 4,
       "readAt": null,
       "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899101444"
-    },
-    {
-      "id": "15802794",
-      "title": "Once Upon the End (Half Upon a Time, #3)",
-      "author": "James  Riley",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1413166779l/15802794.jpg",
-      "rating": 2,
-      "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899079945"
+      "link": "https://www.goodreads.com/review/show/8899101444",
+      "owned": false,
+      "audiobook": false
     },
     {
       "id": "16101515",
@@ -171,17 +383,9 @@
       "rating": 2,
       "readAt": null,
       "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899085634"
-    },
-    {
-      "id": "18635086",
-      "title": "The Eighth Day (Eighth Day, #1)",
-      "author": "Dianne K. Salerni",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1382468899l/18635086.jpg",
-      "rating": 3,
-      "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899080846"
+      "link": "https://www.goodreads.com/review/show/8899085634",
+      "owned": false,
+      "audiobook": false
     },
     {
       "id": "18054017",
@@ -191,7 +395,9 @@
       "rating": 2,
       "readAt": null,
       "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899085662"
+      "link": "https://www.goodreads.com/review/show/8899085662",
+      "owned": false,
+      "audiobook": false
     },
     {
       "id": "18222699",
@@ -201,7 +407,9 @@
       "rating": 4,
       "readAt": null,
       "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899101720"
+      "link": "https://www.goodreads.com/review/show/8899101720",
+      "owned": false,
+      "audiobook": false
     },
     {
       "id": "18554573",
@@ -211,17 +419,9 @@
       "rating": 2,
       "readAt": null,
       "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899085204"
-    },
-    {
-      "id": "22525534",
-      "title": "H2O (The Rain, #1)",
-      "author": "Virginia Bergin",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1404109130l/22525534.jpg",
-      "rating": 0,
-      "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899078829"
+      "link": "https://www.goodreads.com/review/show/8899085204",
+      "owned": false,
+      "audiobook": false
     },
     {
       "id": "22206715",
@@ -231,47 +431,9 @@
       "rating": 3,
       "readAt": null,
       "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899080887"
-    },
-    {
-      "id": "22297138",
-      "title": "The Novice (Summoner, #1)",
-      "author": "Taran Matharu",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1410888223l/22297138.jpg",
-      "rating": 4,
-      "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899076591"
-    },
-    {
-      "id": "22753693",
-      "title": "The Storm (The Rain, #2)",
-      "author": "Virginia Bergin",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1415039702l/22753693.jpg",
-      "rating": 0,
-      "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899079163"
-    },
-    {
-      "id": "23173254",
-      "title": "The Neptune Challenge (The Neptune Project, #2)",
-      "author": "Polly Holyoke",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1423894907l/23173254.jpg",
-      "rating": 2,
-      "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899084755"
-    },
-    {
-      "id": "28374007",
-      "title": "Three Dark Crowns (Three Dark Crowns, #1)",
-      "author": "Kendare Blake",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1469265712l/28374007._SY475_.jpg",
-      "rating": 0,
-      "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899083227"
+      "link": "https://www.goodreads.com/review/show/8899080887",
+      "owned": false,
+      "audiobook": false
     },
     {
       "id": "25489865",
@@ -281,97 +443,9 @@
       "rating": 3,
       "readAt": null,
       "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899080930"
-    },
-    {
-      "id": "26465507",
-      "title": "My Sister Rosa",
-      "author": "Justine Larbalestier",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1442145654l/26465507._SY475_.jpg",
-      "rating": 3,
-      "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899082690"
-    },
-    {
-      "id": "28954189",
-      "title": "Scythe (Arc of a Scythe, #1)",
-      "author": "Neal Shusterman",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1456172676l/28954189.jpg",
-      "rating": 5,
-      "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899075031"
-    },
-    {
-      "id": "29923707",
-      "title": "One Dark Throne (Three Dark Crowns, #2)",
-      "author": "Kendare Blake",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1487862160l/29923707._SY475_.jpg",
-      "rating": 0,
-      "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899083258"
-    },
-    {
-      "id": "33555224",
-      "title": "Thunderhead (Arc of a Scythe, #2)",
-      "author": "Neal Shusterman",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1505658534l/33555224._SY475_.jpg",
-      "rating": 5,
-      "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899075069"
-    },
-    {
-      "id": "33876440",
-      "title": "This Mortal Coil (This Mortal Coil, #1)",
-      "author": "Emily Suvada",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1489514460l/33876440._SY475_.jpg",
-      "rating": 3,
-      "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899078316"
-    },
-    {
-      "id": "40307363",
-      "title": "Two Dark Reigns (Three Dark Crowns, #3)",
-      "author": "Kendare Blake",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1529052000l/40307363.jpg",
-      "rating": 3,
-      "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899083296"
-    },
-    {
-      "id": "38316465",
-      "title": "This Cruel Design (This Mortal Coil, #2)",
-      "author": "Emily Suvada",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1578887736l/38316465._SY475_.jpg",
-      "rating": 3,
-      "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899078356"
-    },
-    {
-      "id": "50948654",
-      "title": "This Vicious Cure (This Mortal Coil, #3)",
-      "author": "Emily Suvada",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1577621764l/50948654._SX318_SY475_.jpg",
-      "rating": 3,
-      "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899078406"
-    },
-    {
-      "id": "54493401",
-      "title": "Project Hail Mary",
-      "author": "Andy Weir",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1764703833l/54493401._SY475_.jpg",
-      "rating": 5,
-      "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899073791"
+      "link": "https://www.goodreads.com/review/show/8899080930",
+      "owned": false,
+      "audiobook": false
     },
     {
       "id": "17165932",
@@ -381,7 +455,9 @@
       "rating": 4,
       "readAt": null,
       "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899101687"
+      "link": "https://www.goodreads.com/review/show/8899101687",
+      "owned": false,
+      "audiobook": false
     }
   ],
   "toRead": [
@@ -392,8 +468,274 @@
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1773427358l/223329645._SY475_.jpg",
       "rating": 0,
       "readAt": null,
-      "addedAt": "2026-09-02",
-      "link": "https://www.goodreads.com/review/show/8914193807"
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8914193807",
+      "owned": true,
+      "audiobook": false
+    },
+    {
+      "id": "18007564",
+      "title": "The Martian",
+      "author": "Andy Weir",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1413706054l/18007564.jpg",
+      "rating": 0,
+      "readAt": null,
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899116970",
+      "owned": true,
+      "audiobook": false
+    },
+    {
+      "id": "241242907",
+      "title": "Songs of the Dead (The Strata Wars, #1)",
+      "author": "Brandon Sanderson",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1763064014l/241242907.jpg",
+      "rating": 0,
+      "readAt": null,
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899106347",
+      "owned": true,
+      "audiobook": false
+    },
+    {
+      "id": "222034397",
+      "title": "Tailored Realities",
+      "author": "Brandon Sanderson",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1761154328l/222034397._SY475_.jpg",
+      "rating": 0,
+      "readAt": null,
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899105961",
+      "owned": true,
+      "audiobook": false
+    },
+    {
+      "id": "57571215",
+      "title": "Cytonic (Skyward, #3)",
+      "author": "Brandon Sanderson",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1622045953l/57571215.jpg",
+      "rating": 0,
+      "readAt": null,
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899104938",
+      "owned": true,
+      "audiobook": false
+    },
+    {
+      "id": "43606308",
+      "title": "Defiant (Skyward, #4)",
+      "author": "Brandon Sanderson",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1677354665l/43606308.jpg",
+      "rating": 0,
+      "readAt": null,
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899104889",
+      "owned": true,
+      "audiobook": false
+    },
+    {
+      "id": "22823333",
+      "title": "The Eleventh Metal (Mistborn, #0.5)",
+      "author": "Brandon Sanderson",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1659766270l/22823333._SY475_.jpg",
+      "rating": 0,
+      "readAt": null,
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899104819",
+      "owned": true,
+      "audiobook": false
+    },
+    {
+      "id": "28698036",
+      "title": "Secret History (Mistborn, #3.5)",
+      "author": "Brandon Sanderson",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1659766387l/28698036._SX318_.jpg",
+      "rating": 0,
+      "readAt": null,
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899104382",
+      "owned": true,
+      "audiobook": false
+    },
+    {
+      "id": "23947089",
+      "title": "The Lost Metal (Mistborn, #7)",
+      "author": "Brandon Sanderson",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1653582537l/23947089.jpg",
+      "rating": 0,
+      "readAt": null,
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899104128",
+      "owned": true,
+      "audiobook": false
+    },
+    {
+      "id": "49021976",
+      "title": "Rhythm of War (The Stormlight Archive, #4)",
+      "author": "Brandon Sanderson",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1599911216l/49021976.jpg",
+      "rating": 0,
+      "readAt": null,
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899103907",
+      "owned": true,
+      "audiobook": false
+    },
+    {
+      "id": "18739426",
+      "title": "The Bands of Mourning (Mistborn, #6)",
+      "author": "Brandon Sanderson",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1730639847l/18739426._SY475_.jpg",
+      "rating": 0,
+      "readAt": null,
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899103859",
+      "owned": true,
+      "audiobook": false
+    },
+    {
+      "id": "16065004",
+      "title": "Shadows of Self (Mistborn, #5)",
+      "author": "Brandon Sanderson",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1659900268l/16065004._SY475_.jpg",
+      "rating": 0,
+      "readAt": null,
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899103827",
+      "owned": true,
+      "audiobook": false
+    },
+    {
+      "id": "35391237",
+      "title": "Five ​Dark Fates (Three Dark Crowns, #4)",
+      "author": "Kendare Blake",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1549656837l/35391237._SY475_.jpg",
+      "rating": 0,
+      "readAt": null,
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899083376",
+      "owned": true,
+      "audiobook": false
+    },
+    {
+      "id": "34702209",
+      "title": "The Outcast (Summoner, #0)",
+      "author": "Taran Matharu",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1518271618l/34702209._SY475_.jpg",
+      "rating": 0,
+      "readAt": null,
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899076692",
+      "owned": true,
+      "audiobook": false
+    },
+    {
+      "id": "31687423",
+      "title": "The Battlemage (Summoner, #3)",
+      "author": "Taran Matharu",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1490816858l/31687423._SY475_.jpg",
+      "rating": 0,
+      "readAt": null,
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899076652",
+      "owned": true,
+      "audiobook": false
+    },
+    {
+      "id": "25689056",
+      "title": "The Inquisition (Summoner, #2)",
+      "author": "Taran Matharu",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1446573037l/25689056.jpg",
+      "rating": 0,
+      "readAt": null,
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899076613",
+      "owned": true,
+      "audiobook": false
+    },
+    {
+      "id": "43822024",
+      "title": "The Toll (Arc of a Scythe, #3)",
+      "author": "Neal Shusterman",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1558117336l/43822024.jpg",
+      "rating": 0,
+      "readAt": null,
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899075126",
+      "owned": true,
+      "audiobook": false
+    },
+    {
+      "id": "211721806",
+      "title": "Dungeon Crawler Carl (Dungeon Crawler Carl, #1)",
+      "author": "Matt Dinniman",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1715780755l/211721806._SY475_.jpg",
+      "rating": 0,
+      "readAt": null,
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899073770",
+      "owned": true,
+      "audiobook": false
+    },
+    {
+      "id": "1268479",
+      "title": "Warbreaker",
+      "author": "Brandon Sanderson",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1240256182l/1268479.jpg",
+      "rating": 0,
+      "readAt": null,
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899073324",
+      "owned": true,
+      "audiobook": false
+    },
+    {
+      "id": "60531406",
+      "title": "Tress of the Emerald Sea (Hoid's Travails, #1)",
+      "author": "Brandon Sanderson",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1672574587l/60531406._SY475_.jpg",
+      "rating": 0,
+      "readAt": null,
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899073225",
+      "owned": true,
+      "audiobook": false
+    },
+    {
+      "id": "10803121",
+      "title": "The Alloy of Law (Mistborn, #4)",
+      "author": "Brandon Sanderson",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1442889632l/10803121._SY475_.jpg",
+      "rating": 0,
+      "readAt": null,
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899073254",
+      "owned": true,
+      "audiobook": false
+    },
+    {
+      "id": "34002132",
+      "title": "Oathbringer (The Stormlight Archive, #3)",
+      "author": "Brandon Sanderson",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1654573897l/34002132._SY475_.jpg",
+      "rating": 0,
+      "readAt": null,
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899073167",
+      "owned": true,
+      "audiobook": false
+    },
+    {
+      "id": "17332218",
+      "title": "Words of Radiance (The Stormlight Archive, #2)",
+      "author": "Brandon Sanderson",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1728768241l/17332218.jpg",
+      "rating": 0,
+      "readAt": null,
+      "addedAt": "2026-09-03",
+      "link": "https://www.goodreads.com/review/show/8899073119",
+      "owned": true,
+      "audiobook": false
     },
     {
       "id": "157605258",
@@ -403,27 +745,9 @@
       "rating": 0,
       "readAt": null,
       "addedAt": "2026-09-02",
-      "link": "https://www.goodreads.com/review/show/8914192284"
-    },
-    {
-      "id": "25689056",
-      "title": "The Inquisition (Summoner, #2)",
-      "author": "Taran Matharu",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1446573037l/25689056.jpg",
-      "rating": 0,
-      "readAt": null,
-      "addedAt": "2026-09-02",
-      "link": "https://www.goodreads.com/review/show/8899076613"
-    },
-    {
-      "id": "18007564",
-      "title": "The Martian",
-      "author": "Andy Weir",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1413706054l/18007564.jpg",
-      "rating": 0,
-      "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899116970"
+      "link": "https://www.goodreads.com/review/show/8914192284",
+      "owned": false,
+      "audiobook": false
     },
     {
       "id": "248244611",
@@ -433,27 +757,9 @@
       "rating": 0,
       "readAt": null,
       "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899107299"
-    },
-    {
-      "id": "241242907",
-      "title": "Songs of the Dead (The Strata Wars, #1)",
-      "author": "Brandon Sanderson",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1763064014l/241242907.jpg",
-      "rating": 0,
-      "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899106347"
-    },
-    {
-      "id": "222034397",
-      "title": "Tailored Realities",
-      "author": "Brandon Sanderson",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1761154328l/222034397._SY475_.jpg",
-      "rating": 0,
-      "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899105961"
+      "link": "https://www.goodreads.com/review/show/8899107299",
+      "owned": false,
+      "audiobook": false
     },
     {
       "id": "33357675",
@@ -463,7 +769,9 @@
       "rating": 0,
       "readAt": null,
       "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899105582"
+      "link": "https://www.goodreads.com/review/show/8899105582",
+      "owned": false,
+      "audiobook": false
     },
     {
       "id": "210300489",
@@ -473,7 +781,9 @@
       "rating": 0,
       "readAt": null,
       "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899105202"
+      "link": "https://www.goodreads.com/review/show/8899105202",
+      "owned": false,
+      "audiobook": false
     },
     {
       "id": "10852065",
@@ -483,37 +793,9 @@
       "rating": 0,
       "readAt": null,
       "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899105127"
-    },
-    {
-      "id": "57571215",
-      "title": "Cytonic (Skyward, #3)",
-      "author": "Brandon Sanderson",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1622045953l/57571215.jpg",
-      "rating": 0,
-      "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899104938"
-    },
-    {
-      "id": "43606308",
-      "title": "Defiant (Skyward, #4)",
-      "author": "Brandon Sanderson",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1677354665l/43606308.jpg",
-      "rating": 0,
-      "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899104889"
-    },
-    {
-      "id": "22823333",
-      "title": "The Eleventh Metal (Mistborn, #0.5)",
-      "author": "Brandon Sanderson",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1659766270l/22823333._SY475_.jpg",
-      "rating": 0,
-      "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899104819"
+      "link": "https://www.goodreads.com/review/show/8899105127",
+      "owned": false,
+      "audiobook": false
     },
     {
       "id": "60531410",
@@ -523,7 +805,9 @@
       "rating": 0,
       "readAt": null,
       "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899104780"
+      "link": "https://www.goodreads.com/review/show/8899104780",
+      "owned": false,
+      "audiobook": false
     },
     {
       "id": "15704486",
@@ -533,7 +817,9 @@
       "rating": 0,
       "readAt": null,
       "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899104741"
+      "link": "https://www.goodreads.com/review/show/8899104741",
+      "owned": false,
+      "audiobook": false
     },
     {
       "id": "28595941",
@@ -543,7 +829,9 @@
       "rating": 0,
       "readAt": null,
       "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899104685"
+      "link": "https://www.goodreads.com/review/show/8899104685",
+      "owned": false,
+      "audiobook": false
     },
     {
       "id": "15704459",
@@ -553,7 +841,9 @@
       "rating": 0,
       "readAt": null,
       "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899104648"
+      "link": "https://www.goodreads.com/review/show/8899104648",
+      "owned": false,
+      "audiobook": false
     },
     {
       "id": "42769202",
@@ -563,7 +853,9 @@
       "rating": 0,
       "readAt": null,
       "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899104512"
+      "link": "https://www.goodreads.com/review/show/8899104512",
+      "owned": false,
+      "audiobook": false
     },
     {
       "id": "60531420",
@@ -573,7 +865,9 @@
       "rating": 0,
       "readAt": null,
       "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899104452"
+      "link": "https://www.goodreads.com/review/show/8899104452",
+      "owned": false,
+      "audiobook": false
     },
     {
       "id": "60531416",
@@ -583,17 +877,9 @@
       "rating": 0,
       "readAt": null,
       "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899104415"
-    },
-    {
-      "id": "28698036",
-      "title": "Secret History (Mistborn, #3.5)",
-      "author": "Brandon Sanderson",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1659766387l/28698036._SX318_.jpg",
-      "rating": 0,
-      "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899104382"
+      "link": "https://www.goodreads.com/review/show/8899104415",
+      "owned": false,
+      "audiobook": false
     },
     {
       "id": "13578175",
@@ -603,7 +889,9 @@
       "rating": 0,
       "readAt": null,
       "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899104223"
+      "link": "https://www.goodreads.com/review/show/8899104223",
+      "owned": false,
+      "audiobook": false
     },
     {
       "id": "17182126",
@@ -613,7 +901,9 @@
       "rating": 0,
       "readAt": null,
       "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899104197"
+      "link": "https://www.goodreads.com/review/show/8899104197",
+      "owned": false,
+      "audiobook": false
     },
     {
       "id": "36642458",
@@ -623,17 +913,9 @@
       "rating": 0,
       "readAt": null,
       "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899104170"
-    },
-    {
-      "id": "23947089",
-      "title": "The Lost Metal (Mistborn, #7)",
-      "author": "Brandon Sanderson",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1653582537l/23947089.jpg",
-      "rating": 0,
-      "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899104128"
+      "link": "https://www.goodreads.com/review/show/8899104170",
+      "owned": false,
+      "audiobook": false
     },
     {
       "id": "34703445",
@@ -643,7 +925,9 @@
       "rating": 0,
       "readAt": null,
       "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899104006"
+      "link": "https://www.goodreads.com/review/show/8899104006",
+      "owned": false,
+      "audiobook": false
     },
     {
       "id": "54511226",
@@ -653,7 +937,9 @@
       "rating": 0,
       "readAt": null,
       "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899104038"
+      "link": "https://www.goodreads.com/review/show/8899104038",
+      "owned": false,
+      "audiobook": false
     },
     {
       "id": "203578847",
@@ -663,67 +949,9 @@
       "rating": 0,
       "readAt": null,
       "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899103973"
-    },
-    {
-      "id": "49021976",
-      "title": "Rhythm of War (The Stormlight Archive, #4)",
-      "author": "Brandon Sanderson",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1599911216l/49021976.jpg",
-      "rating": 0,
-      "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899103907"
-    },
-    {
-      "id": "18739426",
-      "title": "The Bands of Mourning (Mistborn, #6)",
-      "author": "Brandon Sanderson",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1730639847l/18739426._SY475_.jpg",
-      "rating": 0,
-      "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899103859"
-    },
-    {
-      "id": "16065004",
-      "title": "Shadows of Self (Mistborn, #5)",
-      "author": "Brandon Sanderson",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1659900268l/16065004._SY475_.jpg",
-      "rating": 0,
-      "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899103827"
-    },
-    {
-      "id": "35391237",
-      "title": "Five ​Dark Fates (Three Dark Crowns, #4)",
-      "author": "Kendare Blake",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1549656837l/35391237._SY475_.jpg",
-      "rating": 0,
-      "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899083376"
-    },
-    {
-      "id": "34702209",
-      "title": "The Outcast (Summoner, #0)",
-      "author": "Taran Matharu",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1518271618l/34702209._SY475_.jpg",
-      "rating": 0,
-      "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899076692"
-    },
-    {
-      "id": "31687423",
-      "title": "The Battlemage (Summoner, #3)",
-      "author": "Taran Matharu",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1490816858l/31687423._SY475_.jpg",
-      "rating": 0,
-      "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899076652"
+      "link": "https://www.goodreads.com/review/show/8899103973",
+      "owned": false,
+      "audiobook": false
     },
     {
       "id": "17950614",
@@ -733,17 +961,9 @@
       "rating": 0,
       "readAt": null,
       "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899075325"
-    },
-    {
-      "id": "43822024",
-      "title": "The Toll (Arc of a Scythe, #3)",
-      "author": "Neal Shusterman",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1558117336l/43822024.jpg",
-      "rating": 0,
-      "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899075126"
+      "link": "https://www.goodreads.com/review/show/8899075325",
+      "owned": false,
+      "audiobook": false
     },
     {
       "id": "220772912",
@@ -753,7 +973,9 @@
       "rating": 0,
       "readAt": null,
       "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899074527"
+      "link": "https://www.goodreads.com/review/show/8899074527",
+      "owned": false,
+      "audiobook": false
     },
     {
       "id": "220772913",
@@ -763,7 +985,9 @@
       "rating": 0,
       "readAt": null,
       "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899074547"
+      "link": "https://www.goodreads.com/review/show/8899074547",
+      "owned": false,
+      "audiobook": false
     },
     {
       "id": "228928465",
@@ -773,7 +997,9 @@
       "rating": 0,
       "readAt": null,
       "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899074488"
+      "link": "https://www.goodreads.com/review/show/8899074488",
+      "owned": false,
+      "audiobook": false
     },
     {
       "id": "232497556",
@@ -783,7 +1009,9 @@
       "rating": 0,
       "readAt": null,
       "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899074463"
+      "link": "https://www.goodreads.com/review/show/8899074463",
+      "owned": false,
+      "audiobook": false
     },
     {
       "id": "220772908",
@@ -793,7 +1021,9 @@
       "rating": 0,
       "readAt": null,
       "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899074365"
+      "link": "https://www.goodreads.com/review/show/8899074365",
+      "owned": false,
+      "audiobook": false
     },
     {
       "id": "211721809",
@@ -803,7 +1033,9 @@
       "rating": 0,
       "readAt": null,
       "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899074342"
+      "link": "https://www.goodreads.com/review/show/8899074342",
+      "owned": false,
+      "audiobook": false
     },
     {
       "id": "212393364",
@@ -813,7 +1045,9 @@
       "rating": 0,
       "readAt": null,
       "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899074319"
+      "link": "https://www.goodreads.com/review/show/8899074319",
+      "owned": false,
+      "audiobook": false
     },
     {
       "id": "29226553",
@@ -823,7 +1057,9 @@
       "rating": 0,
       "readAt": null,
       "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899074071"
+      "link": "https://www.goodreads.com/review/show/8899074071",
+      "owned": false,
+      "audiobook": false
     },
     {
       "id": "29227774",
@@ -833,7 +1069,9 @@
       "rating": 0,
       "readAt": null,
       "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899074113"
+      "link": "https://www.goodreads.com/review/show/8899074113",
+      "owned": false,
+      "audiobook": false
     },
     {
       "id": "33257757",
@@ -843,7 +1081,9 @@
       "rating": 0,
       "readAt": null,
       "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899074044"
+      "link": "https://www.goodreads.com/review/show/8899074044",
+      "owned": false,
+      "audiobook": false
     },
     {
       "id": "18966819",
@@ -853,7 +1093,9 @@
       "rating": 0,
       "readAt": null,
       "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899074026"
+      "link": "https://www.goodreads.com/review/show/8899074026",
+      "owned": false,
+      "audiobook": false
     },
     {
       "id": "15839976",
@@ -863,7 +1105,9 @@
       "rating": 0,
       "readAt": null,
       "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899073988"
+      "link": "https://www.goodreads.com/review/show/8899073988",
+      "owned": false,
+      "audiobook": false
     },
     {
       "id": "18966806",
@@ -873,7 +1117,9 @@
       "rating": 0,
       "readAt": null,
       "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899073931"
+      "link": "https://www.goodreads.com/review/show/8899073931",
+      "owned": false,
+      "audiobook": false
     },
     {
       "id": "52694527",
@@ -883,7 +1129,9 @@
       "rating": 0,
       "readAt": null,
       "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899073844"
+      "link": "https://www.goodreads.com/review/show/8899073844",
+      "owned": false,
+      "audiobook": false
     },
     {
       "id": "41886271",
@@ -893,47 +1141,9 @@
       "rating": 0,
       "readAt": null,
       "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899073868"
-    },
-    {
-      "id": "211721806",
-      "title": "Dungeon Crawler Carl (Dungeon Crawler Carl, #1)",
-      "author": "Matt Dinniman",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1715780755l/211721806._SY475_.jpg",
-      "rating": 0,
-      "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899073770"
-    },
-    {
-      "id": "1268479",
-      "title": "Warbreaker",
-      "author": "Brandon Sanderson",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1240256182l/1268479.jpg",
-      "rating": 0,
-      "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899073324"
-    },
-    {
-      "id": "60531406",
-      "title": "Tress of the Emerald Sea (Hoid's Travails, #1)",
-      "author": "Brandon Sanderson",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1672574587l/60531406._SY475_.jpg",
-      "rating": 0,
-      "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899073225"
-    },
-    {
-      "id": "10803121",
-      "title": "The Alloy of Law (Mistborn, #4)",
-      "author": "Brandon Sanderson",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1442889632l/10803121._SY475_.jpg",
-      "rating": 0,
-      "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899073254"
+      "link": "https://www.goodreads.com/review/show/8899073868",
+      "owned": false,
+      "audiobook": false
     },
     {
       "id": "68427",
@@ -943,27 +1153,9 @@
       "rating": 0,
       "readAt": null,
       "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899073201"
-    },
-    {
-      "id": "34002132",
-      "title": "Oathbringer (The Stormlight Archive, #3)",
-      "author": "Brandon Sanderson",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1654573897l/34002132._SY475_.jpg",
-      "rating": 0,
-      "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899073167"
-    },
-    {
-      "id": "17332218",
-      "title": "Words of Radiance (The Stormlight Archive, #2)",
-      "author": "Brandon Sanderson",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1728768241l/17332218.jpg",
-      "rating": 0,
-      "readAt": null,
-      "addedAt": "2026-08-28",
-      "link": "https://www.goodreads.com/review/show/8899073119"
+      "link": "https://www.goodreads.com/review/show/8899073201",
+      "owned": false,
+      "audiobook": false
     }
   ]
 }
