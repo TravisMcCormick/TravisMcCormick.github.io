@@ -68,14 +68,25 @@ function compareBooks(a: Book, b: Book) {
 }
 
 /**
- * Read shelf: rating ascending first (1, 2, 3, ...; unrated last), then fall
- * back to author surname and series order.
+ * Read shelf: rating descending first (5, 4, 3, ...; unrated last), then fall
+ * back to author surname and series order. The shelf is also split into rating
+ * groups on the page, so this fixes the order those groups appear in too.
  */
 function compareReadBooks(a: Book, b: Book) {
-  const ra = a.rating > 0 ? a.rating : Infinity;
-  const rb = b.rating > 0 ? b.rating : Infinity;
-  if (ra !== rb) return ra - rb;
+  const ra = a.rating > 0 ? a.rating : -1;
+  const rb = b.rating > 0 ? b.rating : -1;
+  if (ra !== rb) return rb - ra;
   return compareBooks(a, b);
+}
+
+/** Rating buckets for the Read shelf, in display order (5 down to unrated). */
+const RATING_ORDER = [5, 4, 3, 2, 1, 0];
+
+function groupByRating(books: Book[]) {
+  return RATING_ORDER.map((rating) => ({
+    rating,
+    books: books.filter((b) => (b.rating > 0 ? b.rating : 0) === rating),
+  })).filter((g) => g.books.length > 0);
 }
 
 type Section = {
@@ -84,6 +95,7 @@ type Section = {
   kicker: string;
   books: Book[];
   showDate: boolean;
+  grouped: boolean;
   shelf: "currently-reading" | "read" | "to-read";
 };
 
@@ -104,9 +116,9 @@ export default function Books() {
   const toReadList = useMemo(() => sift(toRead), [toRead, q]);
 
   const sections: Section[] = [
-    { id: "currently-reading", label: "Currently Reading", kicker: "01", books: current, showDate: false, shelf: "currently-reading" },
-    { id: "read", label: "Read", kicker: "02", books: readList, showDate: true, shelf: "read" },
-    { id: "want-to-read", label: "Want to Read", kicker: "03", books: toReadList, showDate: false, shelf: "to-read" },
+    { id: "currently-reading", label: "Currently Reading", kicker: "01", books: current, showDate: false, grouped: false, shelf: "currently-reading" },
+    { id: "read", label: "Read", kicker: "02", books: readList, showDate: true, grouped: true, shelf: "read" },
+    { id: "want-to-read", label: "Want to Read", kicker: "03", books: toReadList, showDate: false, grouped: false, shelf: "to-read" },
   ];
   const visible = sections.filter((s) => s.books.length > 0);
 
@@ -123,7 +135,7 @@ export default function Books() {
       <PageHeader
         kicker="CAT ~/READING/*"
         title="Books"
-        intro="What I'm reading now, what I've finished, and what's next, sorted by author and synced from Goodreads so this stays current on its own."
+        intro="What I'm reading now, what I've finished, and what's next. Finished books are grouped by rating, then sorted by author and series, and everything syncs from Goodreads so this stays current on its own."
         actions={
           <AnchorButton
             href={RECOMMENDATIONS_URL}
@@ -202,6 +214,7 @@ export default function Books() {
                   title={s.label}
                   books={s.books}
                   showDate={s.showDate}
+                  grouped={s.grouped}
                 />
               ))
             )}
@@ -242,12 +255,14 @@ function Shelf({
   title,
   books,
   showDate,
+  grouped = false,
 }: {
   id: string;
   kicker: string;
   title: string;
   books: Book[];
   showDate: boolean;
+  grouped?: boolean;
 }) {
   return (
     <section id={id} className="scroll-mt-32">
@@ -257,19 +272,93 @@ function Shelf({
           {books.length}
         </span>
       </SectionTitle>
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {books.map((book, i) => (
-          <Reveal key={book.id || book.title} delay={Math.min(i, 8) * 0.03}>
-            <BookCard book={book} showDate={showDate} />
-          </Reveal>
-        ))}
-      </div>
+      {grouped ? (
+        <div className="space-y-10">
+          {groupByRating(books).map((group) => (
+            <RatingGroup
+              key={group.rating}
+              rating={group.rating}
+              books={group.books}
+              showDate={showDate}
+            />
+          ))}
+        </div>
+      ) : (
+        <BookGrid books={books} showDate={showDate} />
+      )}
     </section>
   );
 }
 
-function BookCard({ book, showDate }: { book: Book; showDate: boolean }) {
+function RatingGroup({
+  rating,
+  books,
+  showDate,
+}: {
+  rating: number;
+  books: Book[];
+  showDate: boolean;
+}) {
+  return (
+    <div>
+      <div className="mb-4 flex items-center gap-2 border-b border-border pb-2">
+        {rating > 0 ? (
+          <span
+            className="flex items-center gap-0.5"
+            aria-label={`${rating} out of 5 stars`}
+          >
+            {Array.from({ length: 5 }, (_, i) => (
+              <Star
+                key={i}
+                size={14}
+                weight={i < rating ? "fill" : "regular"}
+                className={cx(i < rating ? "text-accent" : "text-ink-faint")}
+              />
+            ))}
+          </span>
+        ) : (
+          <span className="font-mono text-xs uppercase tracking-widest text-ink-dim">
+            Unrated
+          </span>
+        )}
+        <span className="font-mono text-xs text-ink-faint">{books.length}</span>
+      </div>
+      <BookGrid books={books} showDate={showDate} showRating={false} />
+    </div>
+  );
+}
+
+function BookGrid({
+  books,
+  showDate,
+  showRating = true,
+}: {
+  books: Book[];
+  showDate: boolean;
+  showRating?: boolean;
+}) {
+  return (
+    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {books.map((book, i) => (
+        <Reveal key={book.id || book.title} delay={Math.min(i, 8) * 0.03}>
+          <BookCard book={book} showDate={showDate} showRating={showRating} />
+        </Reveal>
+      ))}
+    </div>
+  );
+}
+
+function BookCard({
+  book,
+  showDate,
+  showRating = true,
+}: {
+  book: Book;
+  showDate: boolean;
+  showRating?: boolean;
+}) {
   const read = showDate ? monthYear(book.readAt) : null;
+  const stars = showRating && book.rating > 0;
 
   return (
     <a
@@ -299,9 +388,9 @@ function BookCard({ book, showDate }: { book: Book; showDate: boolean }) {
           <h3 className="text-sm font-semibold leading-snug text-ink">{book.title}</h3>
           <p className="mt-0.5 text-sm text-ink-dim">{book.author}</p>
 
-          {(book.rating > 0 || read) && (
+          {(stars || read) && (
             <div className="mt-auto flex items-center gap-2 pt-3">
-              {book.rating > 0 && (
+              {stars && (
                 <span
                   className="flex items-center gap-0.5"
                   aria-label={`${book.rating} out of 5`}
