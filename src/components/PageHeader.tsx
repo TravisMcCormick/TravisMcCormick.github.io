@@ -6,12 +6,14 @@ type Props = {
   title: string;
   intro?: string;
   actions?: ReactNode;
+  // Widen to line up with a page that uses a wider content container.
+  wide?: boolean;
 };
 
-export function PageHeader({ kicker, title, intro, actions }: Props) {
+export function PageHeader({ kicker, title, intro, actions, wide }: Props) {
   return (
     <header className="border-b border-border pb-10 pt-14 sm:pt-20">
-      <Container>
+      <Container className={wide ? "max-w-7xl" : undefined}>
         <Reveal>
           <div className="mb-3 font-mono text-xs tracking-widest text-accent">{kicker}</div>
           <h1 className="text-3xl font-semibold tracking-tight text-ink sm:text-5xl">{title}</h1>

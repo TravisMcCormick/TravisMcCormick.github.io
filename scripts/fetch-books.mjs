@@ -19,6 +19,13 @@ const SHELVES = [
   ["to-read", "date_added", "toRead"],
 ];
 
+// Custom Goodreads shelves whose membership tags a book with a boolean flag.
+// [shelf name, book flag]
+const TAG_SHELVES = [
+  ["owned", "owned"],
+  ["audiobooks", "audiobook"],
+];
+
 async function readUserId() {
   const env = process.env.GOODREADS_USER_ID?.trim();
   if (env) return env;
@@ -70,6 +77,8 @@ function mapItem(block) {
     readAt: toIso(tag(block, "user_read_at")),
     addedAt: toIso(tag(block, "user_date_added")) || toIso(tag(block, "pubDate")),
     link: (tag(block, "link") || "").split("?")[0],
+    owned: false,
+    audiobook: false,
   };
 }
 
@@ -89,6 +98,12 @@ async function fetchShelf(userId, shelf, sort) {
     .sort((a, b) =>
       (b.readAt ?? b.addedAt ?? "").localeCompare(a.readAt ?? a.addedAt ?? ""),
     );
+}
+
+// Set of book ids on a custom shelf, used only to tag books on the main shelves.
+async function fetchShelfIds(userId, shelf) {
+  const books = await fetchShelf(userId, shelf, "date_added");
+  return new Set(books.map((b) => b.id));
 }
 
 const userId = await readUserId();
@@ -113,10 +128,31 @@ for (const [shelf, sort, key] of SHELVES) {
   }
 }
 
+// Tag books that also sit on a custom shelf (owned, audiobooks, ...). A shelf
+// that fails to fetch falls back to the flags already in the previous JSON.
+const allBooks = [...out.currentlyReading, ...out.read, ...out.toRead];
+const prevBooks = [
+  ...existing.currentlyReading,
+  ...existing.read,
+  ...existing.toRead,
+];
+for (const [shelf, flag] of TAG_SHELVES) {
+  let ids;
+  try {
+    ids = await fetchShelfIds(userId, shelf);
+  } catch (err) {
+    ids = new Set(prevBooks.filter((b) => b[flag]).map((b) => b.id));
+    console.warn(`[fetch-books] ${shelf}: ${err.message} - keeping previous`);
+  }
+  for (const b of allBooks) b[flag] = ids.has(b.id);
+}
+
 if (ok) out.updatedAt = new Date().toISOString();
 
 await writeFile(OUT, JSON.stringify(out, null, 2) + "\n");
+const flagged = (flag) => allBooks.filter((b) => b[flag]).length;
 console.log(
   `[fetch-books] currentlyReading=${out.currentlyReading.length} ` +
-    `read=${out.read.length} toRead=${out.toRead.length}`,
+    `read=${out.read.length} toRead=${out.toRead.length} ` +
+    `owned=${flagged("owned")} audiobook=${flagged("audiobook")}`,
 );

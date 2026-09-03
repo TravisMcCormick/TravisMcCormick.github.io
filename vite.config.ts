@@ -38,5 +38,16 @@ export default defineConfig({
   build: {
     outDir: "dist",
     sourcemap: false,
+    rollupOptions: {
+      output: {
+        // Split the big, rarely-changing deps into their own long-lived chunks
+        // so the app chunk stays small and cache-friendly.
+        manualChunks: {
+          react: ["react", "react-dom", "react-router-dom"],
+          motion: ["motion", "motion/react"],
+          icons: ["@phosphor-icons/react"],
+        },
+      },
+    },
   },
 });

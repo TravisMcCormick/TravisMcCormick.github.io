@@ -16,6 +16,10 @@
   --color-accent-bright: #82b4ff;
   --color-online: #34d399;
 
+  /* Books page shelf tags: warm gold = owned copy, muted violet = audiobook. */
+  --color-owned: #d2a24c;
+  --color-audio: #a98fd8;
+
   --font-sans: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Geist Mono Variable", ui-monospace, "SF Mono", Menlo, monospace;
 }
