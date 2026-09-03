@@ -3,15 +3,11 @@ import { site } from "../content/site";
 
 type Props = { title: string; description: string };
 
-/**
- * Minimal per-route <head> management, no extra dependency. Sets the document
- * title and the meta description / og tags so shared links and search results
- * are page-specific.
- */
+// Per-route <title> and meta/OG tags, so shared links are page-specific.
 export function PageMeta({ title, description }: Props) {
   useEffect(() => {
     const fullTitle =
-      title === site.name ? `${site.name} — ${site.role}` : `${title} — ${site.name}`;
+      title === site.name ? `${site.name} | ${site.role}` : `${title} | ${site.name}`;
     document.title = fullTitle;
 
     setMeta("name", "description", description);

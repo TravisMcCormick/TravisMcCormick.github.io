@@ -8,8 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="dark" />
     <meta name="theme-color" content="#0a0d12" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="robots" content="noindex, nofollow, noai, noimageai" />
 
-    <title>Travis McCormick — Embedded Cybersecurity Engineer</title>
+    <title>Travis McCormick | Embedded Cybersecurity Engineer</title>
     <meta
       name="description"
       content="Travis McCormick is an Embedded Cybersecurity Engineer working on embedded agents, WebRTC peer discovery, and network security. Projects, resume, and background."
@@ -17,7 +19,7 @@
     <link rel="canonical" href="https://travismccormick.github.io/" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Travis McCormick — Embedded Cybersecurity Engineer" />
+    <meta property="og:title" content="Travis McCormick | Embedded Cybersecurity Engineer" />
     <meta
       property="og:description"
       content="Embedded Cybersecurity Engineer. Embedded agents, WebRTC peer discovery, network security, and the things I build to fix problems I run into."
@@ -25,25 +27,8 @@
     <meta property="og:url" content="https://travismccormick.github.io/" />
     <meta name="twitter:card" content="summary" />
 
-    <!--
-      Single Page Apps for GitHub Pages
-      https://github.com/rafgraph/spa-github-pages
-      Decodes the redirect that public/404.html writes, so deep links work.
-    -->
-    <script>
-      (function (l) {
-        if (l.search[1] === "/") {
-          var decoded = l.search
-            .slice(1)
-            .split("&")
-            .map(function (s) {
-              return s.replace(/~and~/g, "&");
-            })
-            .join("?");
-          window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
-        }
-      })(window.location);
-    </script>
+    <!-- Decodes the redirect that public/404.html writes, so deep links work. -->
+    <script src="/spa-redirect.js"></script>
   </head>
   <body>
     <div id="root"></div>

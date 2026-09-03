@@ -1,8 +1,8 @@
 export const howItStarted: string[] = [
-  "I started swimming in 7th grade. Before that, I played a bunch of different sports at the YMCA and did little league baseball for a few seasons. By the end of my last baseball season, I was pretty tired of my dad always telling me to go outside and practice, so I decided to try something different—swimming.",
-  "I ended up joining the St. Cloud Aquatics team, and honestly, it was one of the best decisions I made. I met some of my closest friends through that team. What I liked about swimming was that it's an individual sport—you're competing against yourself and the clock. That pushed me to work harder than I ever did in team sports.",
+  "I started swimming in 7th grade. Before that, I played a bunch of different sports at the YMCA and did little league baseball for a few seasons. By the end of my last baseball season, I was pretty tired of my dad always telling me to go outside and practice, so I decided to try something different, swimming.",
+  "I ended up joining the St. Cloud Aquatics team, and honestly, it was one of the best decisions I made. I met some of my closest friends through that team. What I liked about swimming was that it's an individual sport. You're competing against yourself and the clock. That pushed me to work harder than I ever did in team sports.",
   "The discipline I got from swimming carried over into everything else. I became a lifeguard at 16, got my Water Safety Instructor certification, taught kids and adults how to swim, and eventually became Head Lifeguard at Florida Poly. All of that started because I wanted to try something new in 7th grade.",
-  "These times don't really mean much now since I'm out of high school, but I'm still pretty proud of what I was able to accomplish. Swimming taught me that if you keep showing up and putting in the work, you'll get better. That applies to pretty much everything—coding, building stuff, whatever.",
+  "These times don't really mean much now since I'm out of high school, but I'm still pretty proud of what I was able to accomplish. Swimming taught me that if you keep showing up and putting in the work, you'll get better. That applies to pretty much everything: coding, building stuff, whatever.",
 ];
 
 export const timesIntro =
@@ -34,11 +34,9 @@ export const swimTimes: SwimTime[] = [
   { event: "200 IM LCM", time: "2:49.39", meet: "Sunshine State Games", date: "Jun 7, 2019" },
 ];
 
-// "Beyond the Pool" - the original prose contains one inline link to the
-// Lifeguard Scheduling App project. Rendered as segments so the link stays live.
 export const beyondThePool = {
   before:
-    "Swimming didn't just stay in the pool—it shaped everything that came after. The discipline I learned from training carried over into lifeguarding, teaching, and eventually into engineering. When I saw an inefficiency at the City of Lakeland, I didn't just accept it—I built the ",
+    "Swimming didn't just stay in the pool. It shaped everything that came after. The discipline I learned from training carried over into lifeguarding, teaching, and eventually into engineering. When I saw an inefficiency at the City of Lakeland, I didn't just accept it. I built the ",
   linkText: "Lifeguard Scheduling App",
   linkTo: "/projects",
   after:

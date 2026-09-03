@@ -1,3 +1,14 @@
+import type { Icon } from "@phosphor-icons/react";
+import {
+  BookOpen,
+  EnvelopeSimple,
+  FolderOpen,
+  House,
+  PersonSimpleSwim,
+  ReadCvLogo,
+  User,
+} from "@phosphor-icons/react";
+
 export const site = {
   name: "Travis McCormick",
   shortName: "TSM",
@@ -11,11 +22,7 @@ export const site = {
   linkedin: "https://linkedin.com/in/travissmccormick",
   swimcloud: "https://www.swimcloud.com/swimmer/762084/",
   url: "https://travismccormick.github.io",
-
-  // Numeric Goodreads user id (the digits in your profile URL:
-  // goodreads.com/user/show/12345678-travis -> "12345678"). The /books page
-  // and scripts/fetch-books.mjs both read this. Until it is set, the Books
-  // page shows an empty state and nothing is fetched.
+  // Digits from the Goodreads profile URL; drives the Books page sync.
   goodreadsUserId: "203879028",
 };
 
@@ -24,24 +31,19 @@ export const goodreadsProfileUrl = `https://www.goodreads.com/user/show/${site.g
 export const goodreadsShelfUrl = (shelf: "currently-reading" | "read" | "to-read") =>
   `https://www.goodreads.com/review/list/${site.goodreadsUserId}?shelf=${shelf}`;
 
-export type NavItem = { label: string; to: string; key: string };
+export type NavItem = { label: string; to: string; key: string; icon: Icon };
 
 export const navItems: NavItem[] = [
-  { label: "Home", to: "/", key: "h" },
-  { label: "About", to: "/about", key: "a" },
-  { label: "Resume", to: "/resume", key: "r" },
-  { label: "Contact", to: "/contact", key: "c" },
-  { label: "Projects", to: "/projects", key: "p" },
-  { label: "Books", to: "/books", key: "k" },
-  { label: "Swimming", to: "/swimming", key: "s" },
+  { label: "Home", to: "/", key: "h", icon: House },
+  { label: "About", to: "/about", key: "a", icon: User },
+  { label: "Resume", to: "/resume", key: "r", icon: ReadCvLogo },
+  { label: "Contact", to: "/contact", key: "c", icon: EnvelopeSimple },
+  { label: "Projects", to: "/projects", key: "p", icon: FolderOpen },
+  { label: "Books", to: "/books", key: "k", icon: BookOpen },
+  { label: "Swimming", to: "/swimming", key: "s", icon: PersonSimpleSwim },
 ];
 
-// Number-key aliases: 1..6 follow the nav order (About, Resume, Contact, ...).
-export const numberAliases: Record<string, string> = {
-  "1": "/about",
-  "2": "/resume",
-  "3": "/contact",
-  "4": "/projects",
-  "5": "/books",
-  "6": "/swimming",
-};
+// Number keys 1..6 map to the nav items after Home, in order.
+export const numberAliases: Record<string, string> = Object.fromEntries(
+  navItems.slice(1).map((item, i) => [String(i + 1), item.to]),
+);

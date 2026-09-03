@@ -2,8 +2,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowUpRight,
-  GithubLogo,
-  LinkedinLogo,
   User,
   Code,
   FileText,
@@ -21,6 +19,7 @@ import {
   Panel,
   Reveal,
   SectionTitle,
+  SocialLinks,
   linkifyCompanies,
 } from "../components/primitives";
 import { site } from "../content/site";
@@ -31,7 +30,7 @@ type Card = { to: string; icon: Icon; title: string; body: string };
 const CARDS: Card[] = [
   { to: "/about", icon: User, title: "About", body: "Learn about my background, education, and what I'm working on." },
   { to: "/resume", icon: FileText, title: "Resume", body: "My full professional experience and downloadable resume." },
-  { to: "/contact", icon: EnvelopeSimple, title: "Contact", body: "Get in touch—I'm always open to new opportunities." },
+  { to: "/contact", icon: EnvelopeSimple, title: "Contact", body: "Get in touch. I'm always open to new opportunities." },
   { to: "/projects", icon: Code, title: "Projects", body: "Check out the things I've built, from keyboards to web apps." },
   { to: "/books", icon: BookOpen, title: "Books", body: "What I'm reading now and the books that have stuck with me." },
   { to: "/swimming", icon: PersonSimpleSwim, title: "Swimming", body: "My competitive swimming background and lifeguarding journey." },
@@ -76,26 +75,7 @@ function Hero() {
             </LinkButton>
           </div>
 
-          <div className="mt-7 flex items-center gap-2">
-            <a
-              href={site.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
-              className="grid size-10 place-items-center rounded-md border border-border text-ink-dim transition-colors hover:border-border-bright hover:text-ink"
-            >
-              <GithubLogo size={20} />
-            </a>
-            <a
-              href={site.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              className="grid size-10 place-items-center rounded-md border border-border text-ink-dim transition-colors hover:border-border-bright hover:text-ink"
-            >
-              <LinkedinLogo size={20} />
-            </a>
-          </div>
+          <SocialLinks size="md" className="mt-7" />
         </Reveal>
 
         <Reveal delay={0.1} className="justify-self-center md:justify-self-end">
@@ -132,7 +112,7 @@ function NowStrip() {
               <span className="relative inline-flex size-2 rounded-full bg-online" />
             </span>
             <span className="font-mono text-xs tracking-widest text-ink-dim">
-              NOW — {now.status}
+              NOW · {now.status}
             </span>
           </div>
 

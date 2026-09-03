@@ -14,7 +14,7 @@ export default function Resume() {
         description="Travis McCormick's resume: Embedded Cybersecurity Engineer at EveryPeer, with experience in reverse engineering, embedded systems, and network security. Downloadable PDF."
       />
       <PageHeader
-        kicker="CAT RESUME.PDF"
+        kicker="cat resume.pdf"
         title="Resume"
         actions={
           <div className="no-print flex flex-wrap gap-3">
