@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 import {
   EnvelopeSimple,
-  Phone,
   MapPin,
   LinkedinLogo,
   GithubLogo,
@@ -21,7 +20,6 @@ const ROWS: Row[] = [
     value: site.email,
     href: `mailto:${site.email}`,
   },
-  { icon: <Phone size={18} />, label: "Phone", value: site.phone, href: site.phoneHref },
   { icon: <MapPin size={18} />, label: "Location", value: site.location },
   {
     icon: <LinkedinLogo size={18} />,
@@ -42,7 +40,7 @@ export default function Contact() {
     <>
       <PageMeta
         title="Contact"
-        description="Get in touch with Travis McCormick by email, phone, LinkedIn, or GitHub."
+        description="Get in touch with Travis McCormick by email, LinkedIn, or GitHub."
       />
       <PageHeader kicker="./contact" title="Contact" />
 

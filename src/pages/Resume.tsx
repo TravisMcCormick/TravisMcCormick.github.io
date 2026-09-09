@@ -1,4 +1,4 @@
-import { DownloadSimple, Printer, MapPin, EnvelopeSimple, Phone, LinkedinLogo } from "@phosphor-icons/react";
+import { DownloadSimple, Printer, MapPin, EnvelopeSimple, LinkedinLogo } from "@phosphor-icons/react";
 
 import { PageMeta } from "../components/PageMeta";
 import { PageHeader } from "../components/PageHeader";
@@ -56,9 +56,6 @@ export default function Resume() {
                 </span>
                 <span className="inline-flex items-center gap-1.5">
                   <EnvelopeSimple size={14} /> {site.email}
-                </span>
-                <span className="inline-flex items-center gap-1.5">
-                  <Phone size={14} /> {site.phone}
                 </span>
                 <a
                   href={site.linkedin}
