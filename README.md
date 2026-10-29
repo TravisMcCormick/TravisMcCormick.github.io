@@ -47,7 +47,9 @@ src/
   content/            All copy and structured data, one file per page
                       (books.generated.json is auto-written, do not edit)
 scripts/
-  fetch-books.mjs    Goodreads shelves -> books.generated.json (build + monthly cron)
+  fetch-books.mjs    Goodreads CSV export -> books.generated.json (every build)
+data/
+  goodreads_library_export.csv   Goodreads library export (replace to update /books)
 public/
   assets/             headshot.jpg + resume PDFs
   favicon.svg
@@ -64,13 +66,23 @@ changes needed:
 - `projects.ts`, `resume.ts`, `about.ts`, `swimming.ts` — page content
 - `site.ts` — name, links, nav items, keyboard shortcut keys, Goodreads id
 
-## Books page (auto-synced)
+## Books page (from a Goodreads export)
 
-`/books` renders `src/content/books.generated.json`, which is regenerated from
-the Goodreads **currently-reading**, **read**, and **to-read** shelves by
-`scripts/fetch-books.mjs` on every build and on the monthly schedule in the
-deploy workflow (1st of the month). It also refreshes on any push, and you can
-run it on demand from the Actions tab. The page shows the three shelves in that
+`/books` renders `src/content/books.generated.json`, which
+`scripts/fetch-books.mjs` regenerates on every build from
+`data/goodreads_library_export.csv` (the **currently-reading**, **read**, and
+**to-read** exclusive shelves). Goodreads' shelf RSS feeds started returning 404
+in Oct 2026, so there is no live sync any more: to update, export again
+(goodreads.com → My Books → Import and export → Export library), replace the CSV,
+and push. Only the columns the page needs are read, so reviews and private notes
+in the export never reach the JSON — but the CSV itself is committed to this
+public repo, so blank those columns first if you ever fill them in.
+
+The export has no cover images. Covers already in the JSON are kept (the older
+ones are Goodreads' own); new books are looked up by ISBN on Amazon, then by
+title + author on Apple Books, and stay coverless rather than take a wrong match.
+
+The page shows the three shelves in that
 order with a sticky side rail (shelf nav + tag key), sorts each by author then
 series (standalones by title), has a client-side title/author search, and links
 to the Goodreads profile.
@@ -81,19 +93,15 @@ card's meta row (`text-owned` / `text-audio` tokens in `index.css`). The key
 ("Owned" / "Audiobook" chips) sits under the shelf nav on desktop, under the
 search box otherwise, and doubles as a filter — clicking a chip narrows every
 shelf to titles with that tag; both together is an AND, and the shelf grid
-re-reveals on each change. Add/remove a flag by shelving the book on Goodreads.
-New tag shelves go in `TAG_SHELVES` in `fetch-books.mjs` plus the `Book` type and
-card in `src/pages/Books.tsx`.
+re-reveals on each change. Add/remove a flag by shelving the book on Goodreads
+(it shows up after the next export). New tag shelves go in `TAG_SHELVES` in
+`fetch-books.mjs` plus the `Book` type and card in `src/pages/Books.tsx`.
 
-**Setup is done:** the Goodreads id lives in `site.ts` → `goodreadsUserId`
-(the digits in the profile URL). All shelves must stay public. If the id is
-cleared, the page falls back to an empty state.
+The Goodreads id in `site.ts` → `goodreadsUserId` is still used for the profile
+link.
 
-- Manual refresh: Actions tab → "Deploy to GitHub Pages" → "Run workflow".
 - Local: `npm run fetch:books` (also runs automatically before `npm run dev`).
-- If Goodreads is unreachable at build time, the last good JSON is kept.
-- GitHub disables scheduled workflows after 60 days of repo inactivity;
-  re-enable from the Actions tab if the monthly sync stops.
+- If the CSV is missing or unreadable at build time, the last good JSON is kept.
 
 ## Deployment
 
